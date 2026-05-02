@@ -71,6 +71,47 @@ function loadProfile(){
   } catch(e){ INVENTORY = []; }
 }
 
+// ===================== PROGRESION DE JEFES =====================
+// Orden acumulativo: cada imagen incluye todas las victorias anteriores
+const BOSS_PROGRESSION = [
+  { boss: 'troll',   image: 'menu_troll.jpg'   },
+  { boss: 'medusa',  image: 'menu_medusa.png'  },
+];
+
+let defeatedBosses = [];
+
+function saveDefeatedBosses(){
+  try { localStorage.setItem('sb_defeated_bosses', JSON.stringify(defeatedBosses)); } catch(e){}
+}
+function loadDefeatedBosses(){
+  try {
+    const d = localStorage.getItem('sb_defeated_bosses');
+    if(d) defeatedBosses = JSON.parse(d);
+  } catch(e){ defeatedBosses = []; }
+}
+function markBossDefeated(bossType){
+  if(!defeatedBosses.includes(bossType)){
+    defeatedBosses.push(bossType);
+    saveDefeatedBosses();
+  }
+}
+function updateMenuBackground(){
+  const menu = document.getElementById('screen-menu');
+  if(!menu) return;
+  // Buscar la última imagen de progresión desbloqueada
+  let activeImage = null;
+  for(const step of BOSS_PROGRESSION){
+    if(defeatedBosses.includes(step.boss)) activeImage = step.image;
+  }
+  if(activeImage){
+    menu.style.backgroundImage = "url('"+activeImage+"')";
+    menu.style.backgroundSize = 'cover';
+    menu.style.backgroundPosition = 'center top';
+  } else {
+    menu.style.backgroundImage = ''; // vuelve al CSS por defecto
+  }
+}
+
 function getSawbladeParts(){
   const item = INVENTORY.find(i => i.id === 'sawblade_part');
   return item ? (item.qty || 1) : 0;
@@ -225,6 +266,7 @@ function goToMenu() {
   G.currentDrawings=[];
   FG.drawings=[];
   updateMenuPreview();
+  updateMenuBackground();
   showScreen('menu');
 }
 
@@ -1088,6 +1130,7 @@ function checkWin(){
         }
       }
     }
+    markBossDefeated(selectedEnemyType);
     const sc = calcScore();
     saveRecord(sc.total, G.turnCount, G.playerHp);
     const rank = getRank(sc.total);
@@ -2250,6 +2293,7 @@ function goToTemple(){
 
 function templeBack(){
   updateMenuPreview();
+  updateMenuBackground();
   showScreen('menu');
 }
 
@@ -2801,7 +2845,9 @@ function showFloat(text,target,type){
 loadProfile();
 loadCoins();
 loadSneakers();
+loadDefeatedBosses();
 updateMenuPreview();
+updateMenuBackground();
 
 window.addEventListener('resize',()=>{
   if(gameActive) setTimeout(setupCanvas,100);
