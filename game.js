@@ -74,8 +74,8 @@ function loadProfile(){
 // ===================== PROGRESION DE JEFES =====================
 // Orden acumulativo: cada imagen incluye todas las victorias anteriores
 const BOSS_PROGRESSION = [
-  { boss: 'troll',   image: 'menu_troll.jpg'   },
-  { boss: 'medusa',  image: 'menu_medusa.png'  },
+  { boss: 'troll',  video: 'menu_troll.mp4'  },
+  { boss: 'medusa', video: 'menu_medusa.mp4' },
 ];
 
 let defeatedBosses = [];
@@ -96,19 +96,18 @@ function markBossDefeated(bossType){
   }
 }
 function updateMenuBackground(){
-  const menu = document.getElementById('screen-menu');
-  if(!menu) return;
-  // Buscar la última imagen de progresión desbloqueada
-  let activeImage = null;
+  const video = document.getElementById('menu-video');
+  if(!video) return;
+  // Buscar el último video de progresión desbloqueado
+  let activeVideo = 'menu_video.mp4'; // default
   for(const step of BOSS_PROGRESSION){
-    if(defeatedBosses.includes(step.boss)) activeImage = step.image;
+    if(defeatedBosses.includes(step.boss)) activeVideo = step.video;
   }
-  if(activeImage){
-    menu.style.backgroundImage = "url('"+activeImage+"')";
-    menu.style.backgroundSize = 'cover';
-    menu.style.backgroundPosition = 'center top';
-  } else {
-    menu.style.backgroundImage = ''; // vuelve al CSS por defecto
+  const source = video.querySelector('source');
+  if(source && source.src !== activeVideo){
+    source.src = activeVideo;
+    video.load();
+    video.play().catch(()=>{});
   }
 }
 
