@@ -2852,3 +2852,17 @@ window.addEventListener('resize',()=>{
   if(gameActive) setTimeout(setupCanvas,100);
   if(farmActive) setTimeout(setupFarmCanvas,100);
 });
+
+// Autoplay video en móvil: al primer toque/clic se inicia el video
+(function(){
+  function tryPlayVideo(){
+    const v = document.getElementById('menu-video');
+    if(v && v.paused){
+      v.play().catch(()=>{});
+    }
+    document.removeEventListener('touchstart', tryPlayVideo);
+    document.removeEventListener('click', tryPlayVideo);
+  }
+  document.addEventListener('touchstart', tryPlayVideo, { once: true });
+  document.addEventListener('click', tryPlayVideo, { once: true });
+})();
