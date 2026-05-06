@@ -1007,9 +1007,11 @@ function announceEnemyNext(){
 
 function doEnemyTurn(){
   if(!gameActive) return;
-  showTurn('TURNO ENEMIGO');
+  const cfg = ENEMY_CONFIGS[G.enemyType||'troll'];
+  showTurn('⚔️ ATAQUE DE ' + cfg.name, 'enemy');
   setTimeout(()=>{
-    const a=G.nextEnemyAction||(ENEMY_CONFIGS[G.enemyType||'troll'].actions[0]);
+    if(!gameActive) return;
+    const a = G.nextEnemyAction || (cfg.actions[0]);
     if(a.type==='attack'){
       let dmg=rng(a.dmg[0],a.dmg[1]);
       if(G.shieldHp>0){
@@ -1019,20 +1021,22 @@ function doEnemyTurn(){
       }
       G.playerHp=Math.max(0,G.playerHp-dmg);
       showFloat('-'+dmg,'player','dmg'); flashDamage();
-      addLog('Troll te golpeo por '+dmg,'enemy');
+      addLog(cfg.name+' te golpeó por '+dmg,'enemy');
     } else {
       const h=rng(a.heal[0],a.heal[1]);
       G.enemyHp=Math.min(G.enemyMaxHp,G.enemyHp+h);
       healEnemy(); showFloat('+'+h,'enemy','heal');
-      addLog('Troll se curo '+h,'enemy');
+      addLog(cfg.name+' se curó '+h,'enemy');
     }
     updateBattleUI();
     if(checkLose()) return;
     setTimeout(()=>{
-      G.phase='player'; announceEnemyNext(); showTurn('TU TURNO');
+      if(!gameActive) return;
+      G.phase='player'; announceEnemyNext();
+      showTurn('🧙 TU TURNO', 'player');
       updateBattleUI(); startTurnTimer();
-    },600);
-  },500);
+    }, 4200);
+  }, 2200);
 }
 
 function calcScore(){
@@ -2825,9 +2829,27 @@ function flashDamage(){
   const el=document.getElementById('damage-overlay');
   el.classList.add('flash'); setTimeout(()=>el.classList.remove('flash'),600);
 }
-function showTurn(text){
+function showTurn(text, type){
+  const overlay = document.getElementById('turn-overlay');
+  const iconEl  = document.getElementById('turn-overlay-icon');
+  const textEl  = document.getElementById('turn-overlay-text');
+  if(!overlay) return;
+  overlay.classList.remove('show','enemy-turn','player-turn');
+  void overlay.offsetWidth;
+  iconEl.textContent = (type==='enemy')
+    ? (ENEMY_CONFIGS[G.enemyType||'troll'].emoji || '👹')
+    : '🧙';
+  textEl.textContent = text;
+  overlay.classList.add(type==='enemy' ? 'enemy-turn' : 'player-turn', 'show');
+  if(type==='enemy'){
+    const game=document.getElementById('game');
+    game.classList.remove('shake'); void game.offsetWidth; game.classList.add('shake');
+    setTimeout(()=>game.classList.remove('shake'),700);
+  }
+  setTimeout(()=>overlay.classList.remove('show'), 1800);
+  // mantener el indicador viejo también
   const el=document.getElementById('turn-indicator');
-  el.textContent=text; el.classList.remove('show'); void el.offsetWidth; el.classList.add('show');
+  if(el){ el.textContent=text; el.classList.remove('show'); void el.offsetWidth; el.classList.add('show'); }
 }
 function showFloat(text,target,type){
   const container=document.getElementById('game');

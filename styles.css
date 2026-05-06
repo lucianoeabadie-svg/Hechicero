@@ -1,4 +1,4 @@
-  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cinzel+Decorative:wght@700&display=swap');
+﻿  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cinzel+Decorative:wght@700&display=swap');
 
   :root {
     --bg: #0a0612; --panel: #12091e; --panel2: #1a0f2e; --border: #3d1f6e;
@@ -1167,6 +1167,55 @@
   .pot-img-green-lg { display:block; width:26px; height:26px; background-image:url('pocion_verde.png'); background-size:contain; background-repeat:no-repeat; background-position:center; }
   .pot-img-green-btn { display:block; width:24px; height:24px; background-image:url('pocion_verde.png'); background-size:contain; background-repeat:no-repeat; background-position:center; margin:auto; }
   .pot-img-green-menu { display:inline-block; width:22px; height:22px; background-image:url('pocion_verde.png'); background-size:contain; background-repeat:no-repeat; background-position:center; vertical-align:middle; }
+
+  /* ===== TURN OVERLAY ===== */
+  #turn-overlay {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 14px; z-index: 90;
+    pointer-events: none;
+    opacity: 0; transition: opacity 0.35s ease;
+  }
+  #turn-overlay.show { opacity: 1; }
+  #turn-overlay.enemy-turn {
+    background: linear-gradient(160deg, rgba(180,0,0,0.78) 0%, rgba(70,0,0,0.88) 100%);
+  }
+  #turn-overlay.player-turn {
+    background: linear-gradient(160deg, rgba(40,0,110,0.78) 0%, rgba(10,0,50,0.88) 100%);
+  }
+  #turn-overlay-icon {
+    font-size: 62px;
+    animation: turnIconPop 0.45s cubic-bezier(0.175,0.885,0.32,1.275) both;
+  }
+  #turn-overlay-text {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 20px; font-weight: 900;
+    color: #fff; text-align: center;
+    letter-spacing: 2px; padding: 0 24px;
+    text-shadow: 0 0 24px rgba(255,255,255,0.9), 0 2px 8px rgba(0,0,0,0.9);
+    animation: turnTextSlide 0.45s ease both;
+  }
+  @keyframes turnIconPop {
+    0%   { transform: scale(0); opacity: 0; }
+    65%  { transform: scale(1.25); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  @keyframes turnTextSlide {
+    0%   { transform: translateY(28px); opacity: 0; }
+    100% { transform: translateY(0);    opacity: 1; }
+  }
+  @keyframes gameShake {
+    0%,100% { transform: translateX(0); }
+    15%  { transform: translateX(-10px); }
+    30%  { transform: translateX(10px); }
+    45%  { transform: translateX(-7px); }
+    60%  { transform: translateX(7px); }
+    75%  { transform: translateX(-4px); }
+    90%  { transform: translateX(4px); }
+  }
+  #game.shake { animation: gameShake 0.6s ease; }
 
   #menu-hp-display { width:100%; text-align:center; }
   #menu-hp-label { font-size:11px; color:var(--green); text-shadow:0 0 6px var(--green); letter-spacing:1px; margin-bottom:4px; }
