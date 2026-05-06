@@ -16,8 +16,8 @@
 
   <div id="screen-dimmer"></div>
   <div id="medusa-flash"></div>
-  <div id="global-coins-bar"><span>ðŸª™</span><span id="gc-amount">0</span></div>
-  <div id="medusa-warning">ðŸ Â¡MIRADA DE MEDUSA!<br><span style="font-size:13px">-100 HP</span></div>
+  <div id="global-coins-bar"><span>🪙</span><span id="gc-amount">0</span></div>
+  <div id="medusa-warning">🐍 ¡MIRADA DE MEDUSA!<br><span style="font-size:13px">-100 HP</span></div>
   <div id="turn-overlay">
     <div id="turn-overlay-icon"></div>
     <div id="turn-overlay-text"></div>
@@ -37,22 +37,22 @@
         <div class="menu-pot"><span class="pot-img-green-menu"></span><b id="mp-green">10</b></div>
       </div>
       <div id="menu-hp-display">
-        <div id="menu-hp-label">â¤ï¸ <span id="menu-hp-text">300 / 300</span></div>
+        <div id="menu-hp-label">❤️ <span id="menu-hp-text">300 / 300</span></div>
         <div id="menu-hp-bar-bg">
           <div id="menu-hp-bar-fill"></div>
         </div>
       </div>
       <div id="menu-btn-grid">
         <div class="menu-col">
-          <button class="menu-btn menu-btn-primary"  onclick="showScreen('combat-select')">âš”ï¸ COMBATIR</button>
-          <button class="menu-btn menu-btn-farm"      onclick="showScreen('pasillo')">ðŸ•·ï¸ PASILLOS</button>
-          <button class="menu-btn menu-btn-temple"    onclick="goToTemple()">ðŸ›ï¸ TEMPLO</button>
+          <button class="menu-btn menu-btn-primary"  onclick="showScreen('combat-select')">⚔️ COMBATIR</button>
+          <button class="menu-btn menu-btn-farm"      onclick="showScreen('pasillo')">🕷️ PASILLOS</button>
+          <button class="menu-btn menu-btn-temple"    onclick="goToTemple()">🏛️ TEMPLO</button>
 
         </div>
         <div class="menu-col">
-          <button class="menu-btn menu-btn-recipes"  onclick="openRecipes()">ðŸ“– RECETAS</button>
-          <button class="menu-btn menu-btn-shop"      onclick="showScreen('shop');renderShop()">ðŸ‘Ÿ TIENDA</button>
-          <button class="menu-btn menu-btn-ranking"  onclick="showScreen('ranking');renderRanking()">ðŸ… RANKING</button>
+          <button class="menu-btn menu-btn-recipes"  onclick="openRecipes()">📖 RECETAS</button>
+          <button class="menu-btn menu-btn-shop"      onclick="showScreen('shop');renderShop()">👟 TIENDA</button>
+          <button class="menu-btn menu-btn-ranking"  onclick="showScreen('ranking');renderRanking()">🏅 RANKING</button>
         </div>
       </div>
     </div>
@@ -60,14 +60,14 @@
 
   <!-- ===== BATTLE SCREEN ===== -->
   <div id="screen-battle" class="screen">
-    <button id="btn-menu" onclick="askMenu()">â˜° MENÃš</button>
+    <button id="btn-menu" onclick="askMenu()">☰ MENÚ</button>
     <div id="turn-timer-wrap">
       <div id="turn-timer-label">TURNO 10s</div>
       <div id="turn-timer-bg"><div id="turn-timer-fill"></div></div>
     </div>
     <div id="battle-area">
       <div class="hp-section">
-        <div class="hp-label"><span id="enemy-name-label">ðŸ‘¹ TROLL OSCURO</span><span id="enemy-hp-text">500 / 500</span></div>
+        <div class="hp-label"><span id="enemy-name-label">👹 TROLL OSCURO</span><span id="enemy-hp-text">500 / 500</span></div>
         <div class="hp-bar-bg"><div class="hp-bar-fill" id="enemy-hp-fill" style="width:100%"></div></div>
       </div>
       <div id="enemy-area">
@@ -84,14 +84,14 @@
             <img src="data:image/png;base64,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" alt="Medusa ojos abiertos">
           </div>
         </div>
-        <div id="shield-indicator">ðŸ›¡ï¸ Escudo activo</div>
+        <div id="shield-indicator">🛡️ Escudo activo</div>
       </div>
       <div class="hp-section">
-        <div class="hp-label"><span>ðŸ§™ HECHICERO</span><span id="player-hp-text">300 / 300</span></div>
+        <div class="hp-label"><span>🧙 HECHICERO</span><span id="player-hp-text">300 / 300</span></div>
         <div class="hp-bar-bg"><div class="hp-bar-fill" id="player-hp-fill" style="width:100%"></div></div>
       </div>
       <div id="shield-bar-row" class="hp-section">
-        <div class="hp-label"><span>ðŸ›¡ï¸ ESCUDO</span><span id="shield-hp-text">50 / 50</span></div>
+        <div class="hp-label"><span>🛡️ ESCUDO</span><span id="shield-hp-text">50 / 50</span></div>
         <div class="hp-bar-bg"><div class="hp-bar-fill" id="shield-hp-fill" style="width:100%"></div></div>
       </div>
     </div>
@@ -100,37 +100,37 @@
         <div class="potion-slot"><div class="potion-icon"><div class="pot-img-red-lg"></div></div><div class="potion-count" id="count-red">10</div></div>
         <div class="potion-slot"><div class="potion-icon"><div class="pot-img-blue-lg"></div></div><div class="potion-count" id="count-blue">10</div></div>
         <div class="potion-slot"><div class="potion-icon"><div class="pot-img-green-lg"></div></div><div class="potion-count" id="count-green">10</div></div>
-        <div class="potion-slot"><div class="potion-icon">ðŸŸ£</div><div class="potion-count" id="count-purple">10</div></div>
-        <div class="potion-slot"><div class="potion-icon">ðŸŸ¡</div><div class="potion-count" id="count-yellow">10</div></div>
+        <div class="potion-slot"><div class="potion-icon">🟣</div><div class="potion-count" id="count-purple">10</div></div>
+        <div class="potion-slot"><div class="potion-icon">🟡</div><div class="potion-count" id="count-yellow">10</div></div>
       </div>
     </div>
     <div id="spell-hints">
-      <div class="hint-card"><div class="hint-name">âœ–ï¸ GOLPE ARCANO</div><div>ðŸ”´X roja</div></div>
-      <div class="hint-card"><div class="hint-name">ðŸ”¥ BOLA DE FUEGO</div><div>ðŸ”´CÃ­rculo + ðŸ”µPunto</div></div>
-      <div class="hint-card"><div class="hint-name">ðŸ’š CURACIÃ“N</div><div>ðŸŸ¢TriÃ¡ngulo</div></div>
-      <div class="hint-card"><div class="hint-name">ðŸ›¡ï¸ ESCUDO</div><div>ðŸ”µ Cuadrado azul</div></div>
+      <div class="hint-card"><div class="hint-name">✖️ GOLPE ARCANO</div><div>🔴X roja</div></div>
+      <div class="hint-card"><div class="hint-name">🔥 BOLA DE FUEGO</div><div>🔴Círculo + 🔵Punto</div></div>
+      <div class="hint-card"><div class="hint-name">💚 CURACIÓN</div><div>🟢Triángulo</div></div>
+      <div class="hint-card"><div class="hint-name">🛡️ ESCUDO</div><div>🔵 Cuadrado azul</div></div>
     </div>
     <div id="draw-panel">
       <div id="draw-header">
-        <div id="spell-title">âœ¨ DIBUJA TU HECHIZO</div>
-        <div id="timer-display">â€”</div>
+        <div id="spell-title">✨ DIBUJA TU HECHIZO</div>
+        <div id="timer-display">—</div>
       </div>
       <div id="potion-selector">
         <div class="potion-btn selected" data-potion="red" onclick="selectPotion('red')"><div class="pot-img-red-btn"></div><div class="pb-count" id="pb-red">10</div></div>
         <div class="potion-btn" data-potion="blue" onclick="selectPotion('blue')"><div class="pot-img-blue-btn"></div><div class="pb-count" id="pb-blue">10</div></div>
         <div class="potion-btn" data-potion="green" onclick="selectPotion('green')"><div class="pot-img-green-btn"></div><div class="pb-count" id="pb-green">10</div></div>
       </div>
-      <div id="sawblade-uses">ðŸ”± SERRUCHO: <span id="sawblade-uses-count">2/2</span> usos restantes</div>
+      <div id="sawblade-uses">🔱 SERRUCHO: <span id="sawblade-uses-count">2/2</span> usos restantes</div>
       <div id="canvas-container">
         <canvas id="draw-canvas"></canvas>
         <canvas id="draw-guide-canvas"></canvas>
         <button id="blue-dot-btn" onclick="pressBlueCenter()"></button>
-        <div id="canvas-hint">SeleccionÃ¡ una pociÃ³n<br>y dibujÃ¡ tu hechizo</div>
+        <div id="canvas-hint">Seleccioná una poción<br>y dibujá tu hechizo</div>
       </div>
       <div id="action-result"></div>
             <div id="btn-row">
-        <button id="btn-dim" onclick="toggleDim()" title="Modo oscuro">ðŸ˜Ž</button>
-        <button class="game-btn" id="btn-cast" onclick="castSpell()">âš¡ LANZAR</button>
+        <button id="btn-dim" onclick="toggleDim()" title="Modo oscuro">😎</button>
+        <button class="game-btn" id="btn-cast" onclick="castSpell()">⚡ LANZAR</button>
       </div>
     </div>
     <div id="log-area"></div>
@@ -139,73 +139,73 @@
 
   <!-- ===== PASILLO SELECTOR ===== -->
   <div id="screen-pasillo" class="screen">
-    <div id="pasillo-title">ðŸ—ºï¸ LOS PASILLOS</div>
-    <div id="pasillo-subtitle">ELEGÃ UN PASILLO PARA FARMEAR</div>
+    <div id="pasillo-title">🗺️ LOS PASILLOS</div>
+    <div id="pasillo-subtitle">ELEGÍ UN PASILLO PARA FARMEAR</div>
 
     <div class="pasillo-card spider-card" onclick="goToFarm('spider')">
-      <div class="pasillo-emoji">ðŸ•·ï¸</div>
+      <div class="pasillo-emoji">🕷️</div>
       <div class="pasillo-info">
-        <div class="pasillo-name">PASILLO DE LAS ARAÃ‘AS</div>
-        <div class="pasillo-desc">AraÃ±as veloces y venenosas.<br>Muerden cada 3-8 segundos.</div>
+        <div class="pasillo-name">PASILLO DE LAS ARAÑAS</div>
+        <div class="pasillo-desc">Arañas veloces y venenosas.<br>Muerden cada 3-8 segundos.</div>
         <div class="pasillo-drop">
-          ðŸ’§ Drop: <span style="color:#ff8080">ðŸ”´ Pociones Rojas</span><br>
-          ðŸŽ² Tiers: 0% / 5% / 15% / 25% / 70% bonus
+          💧 Drop: <span style="color:#ff8080">🔴 Pociones Rojas</span><br>
+          🎲 Tiers: 0% / 5% / 15% / 25% / 70% bonus
         </div>
       </div>
     </div>
 
     <div class="pasillo-card beetle-card" onclick="goToFarm('beetle')">
-      <div class="pasillo-emoji">ðŸª²</div>
+      <div class="pasillo-emoji">🪲</div>
       <div class="pasillo-info">
         <div class="pasillo-name">PASILLO DE LOS ESCARABAJOS</div>
         <div class="pasillo-desc">Escarabajos acorazados y lentos.<br>Muerden cada 3-8 segundos.</div>
         <div class="pasillo-drop">
-          ðŸ’§ Drop: <span style="color:#8080ff">ðŸ”µ Azules</span> + <span style="color:#ff8080">ðŸ”´ Rojas</span><br>
-          ðŸŽ² Tiers: 0% / 2.5% / 7.5% / 12.5% / 35% (mitad que araÃ±as)
+          💧 Drop: <span style="color:#8080ff">🔵 Azules</span> + <span style="color:#ff8080">🔴 Rojas</span><br>
+          🎲 Tiers: 0% / 2.5% / 7.5% / 12.5% / 35% (mitad que arañas)
         </div>
       </div>
     </div>
 
-    <button class="pasillo-back" onclick="showScreen('menu')">â† VOLVER AL MENÃš</button>
+    <button class="pasillo-back" onclick="showScreen('menu')">← VOLVER AL MENÚ</button>
   </div>
 
   <!-- ===== COMBAT SELECT SCREEN ===== -->
   <div id="screen-combat-select" class="screen">
-    <div id="pasillo-title" style="color:var(--gold);text-shadow:0 0 14px var(--gold)">âš”ï¸ ELEGÃ TU ENEMIGO</div>
-    <div id="pasillo-subtitle" style="font-size:10px;color:var(--muted);letter-spacing:1px;text-align:center">SELECCIONÃ CON QUIÃ‰N COMBATIR</div>
+    <div id="pasillo-title" style="color:var(--gold);text-shadow:0 0 14px var(--gold)">⚔️ ELEGÍ TU ENEMIGO</div>
+    <div id="pasillo-subtitle" style="font-size:10px;color:var(--muted);letter-spacing:1px;text-align:center">SELECCIONÁ CON QUIÉN COMBATIR</div>
 
     <div class="pasillo-card" style="background:linear-gradient(135deg,#0e0618,#1a0830);border-color:#6020a0" onclick="selectEnemy('troll',null);goToBattle()">
-      <div class="pasillo-emoji">ðŸ‘¹</div>
+      <div class="pasillo-emoji">👹</div>
       <div class="pasillo-info">
         <div class="pasillo-name">TROLL OSCURO</div>
-        <div class="pasillo-desc">El guardiÃ¡n de las mazmorras.<br>Ataca y se cura constantemente.</div>
+        <div class="pasillo-desc">El guardián de las mazmorras.<br>Ataca y se cura constantemente.</div>
         <div class="pasillo-drop">
-          â¤ï¸ <span style="color:#ff8080">500 HP</span> &nbsp;|&nbsp; DaÃ±o: 20â€“80<br>
-          ðŸŽ Drop: Fragmento o Receta del Serrucho
+          ❤️ <span style="color:#ff8080">500 HP</span> &nbsp;|&nbsp; Daño: 20–80<br>
+          🎁 Drop: Fragmento o Receta del Serrucho
         </div>
       </div>
     </div>
 
     <div class="pasillo-card" style="background:linear-gradient(135deg,#060e06,#0a1e10);border-color:#208040" onclick="selectEnemy('medusa',null);goToBattle()">
-      <div class="pasillo-emoji">ðŸ</div>
+      <div class="pasillo-emoji">🐍</div>
       <div class="pasillo-info">
         <div class="pasillo-name">MEDUSA</div>
-        <div class="pasillo-desc">Todo al doble. Cada 10 segundos<br>abre los ojos â€” Â¡tenÃ©s 1s para ponerte los lentes!</div>
+        <div class="pasillo-desc">Todo al doble. Cada 10 segundos<br>abre los ojos — ¡tenés 1s para ponerte los lentes!</div>
         <div class="pasillo-drop">
-          â¤ï¸ <span style="color:#ff8080">1000 HP</span> &nbsp;|&nbsp; DaÃ±o: 40â€“160<br>
-          âš ï¸ Sin lentes: -100 HP por mirada
+          ❤️ <span style="color:#ff8080">1000 HP</span> &nbsp;|&nbsp; Daño: 40–160<br>
+          ⚠️ Sin lentes: -100 HP por mirada
         </div>
       </div>
     </div>
 
-    <button class="pasillo-back" onclick="showScreen('menu')">â† VOLVER AL MENÃš</button>
+    <button class="pasillo-back" onclick="showScreen('menu')">← VOLVER AL MENÚ</button>
   </div>
 
   <!-- ===== FARM SCREEN ===== -->
   <div id="screen-farm" class="screen">
     <div id="farm-header">
       <div>
-        <div id="farm-title-text">ðŸ•·ï¸ LOS PASILLOS</div>
+        <div id="farm-title-text">🕷️ LOS PASILLOS</div>
         <div id="farm-kill-count" style="font-size:9px;color:var(--muted);margin-top:2px">Eliminados: 0</div>
       </div>
       <div id="farm-timer-display">20</div>
@@ -214,15 +214,15 @@
       <div id="farm-timer-bar-bg"><div id="farm-timer-bar-fill" style="width:100%"></div></div>
     </div>
     <div id="farm-spider-area">
-      <div class="farm-mob-label" style="font-size:10px;color:var(--muted);letter-spacing:1px;margin-bottom:4px">ðŸ•·ï¸ ARAÃ‘A</div>
-      <div id="spider-sprite">ðŸ•·ï¸</div>
+      <div class="farm-mob-label" style="font-size:10px;color:var(--muted);letter-spacing:1px;margin-bottom:4px">🕷️ ARAÑA</div>
+      <div id="spider-sprite">🕷️</div>
       <div id="spider-hp-wrap">
         <div class="hp-label"><span style="color:var(--muted)">Vida</span><span id="spider-hp-text">100/100</span></div>
         <div class="hp-bar-bg"><div class="hp-bar-fill" id="spider-hp-fill" style="width:100%;background:linear-gradient(90deg,#500080,#c040e0)"></div></div>
       </div>
     </div>
     <div id="farm-player-hp-wrap" style="padding:3px 12px;">
-      <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-bottom:2px"><span>ðŸ§™ HECHICERO</span><span id="farm-player-hp-text">300/300</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-bottom:2px"><span>🧙 HECHICERO</span><span id="farm-player-hp-text">300/300</span></div>
       <div class="hp-bar-bg"><div class="hp-bar-fill" id="farm-player-hp-fill" style="width:100%;background:linear-gradient(90deg,#080,var(--green))"></div></div>
     </div>
     <div id="farm-potions-bar">
@@ -238,13 +238,13 @@
       </div>
       <div id="farm-canvas-container">
         <canvas id="farm-draw-canvas"></canvas>
-        <div id="farm-canvas-hint">DibujÃ¡ un hechizo de ataque<br>ðŸ”´ CÃ­rculo + ðŸ”µ Punto</div>
+        <div id="farm-canvas-hint">Dibujá un hechizo de ataque<br>🔴 Círculo + 🔵 Punto</div>
       </div>
       <div id="farm-result"></div>
       <div id="farm-btn-row">
-                <button id="btn-dim-farm" class="game-btn" onclick="toggleDim()" title="Modo oscuro" style="flex-shrink:0;width:48px;font-size:20px;padding:0">ðŸ˜Ž</button>
-        <button class="game-btn farm-btn" id="farm-btn-cast" onclick="farmCastSpell()">âš¡ LANZAR</button>
-        <button id="farm-btn-punch" onclick="farmPunch()" title="PuÃ±etazo â€” 25% del daÃ±o normal, sin costo">ðŸ‘Š<div class="punch-dmg">Ã—Â¼</div></button>
+                <button id="btn-dim-farm" class="game-btn" onclick="toggleDim()" title="Modo oscuro" style="flex-shrink:0;width:48px;font-size:20px;padding:0">😎</button>
+        <button class="game-btn farm-btn" id="farm-btn-cast" onclick="farmCastSpell()">⚡ LANZAR</button>
+        <button id="farm-btn-punch" onclick="farmPunch()" title="Puñetazo — 25% del daño normal, sin costo">👊<div class="punch-dmg">×¼</div></button>
       </div>
     </div>
     <div id="farm-drop-feed"></div>
@@ -254,43 +254,43 @@
   <div id="screen-temple" class="screen">
     <!-- Header -->
     <div id="temple-header">
-      <div id="temple-title-text">ðŸ›ï¸ EL TEMPLO</div>
-      <div id="temple-coins-display">ðŸª™ 50</div>
+      <div id="temple-title-text">🏛️ EL TEMPLO</div>
+      <div id="temple-coins-display">🪙 50</div>
     </div>
     <div id="temple-player-hp-wrap">
       <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-bottom:2px;padding:0 2px">
-        <span>â¤ï¸ HECHICERO</span><span id="temple-hp-text">300/300</span>
+        <span>❤️ HECHICERO</span><span id="temple-hp-text">300/300</span>
       </div>
       <div class="hp-bar-bg"><div class="hp-bar-fill" id="temple-player-hp-fill" style="background:linear-gradient(90deg,#080,var(--green));width:100%"></div></div>
     </div>
 
     <!-- Category selector -->
     <div id="temple-categories">
-      <div id="temple-cat-title">ELIGE UNA CATEGORÃA</div>
+      <div id="temple-cat-title">ELIGE UNA CATEGORÍA</div>
       <div id="temple-cat-grid">
-        <div class="cat-btn selected" data-cat="historia" onclick="selectCategory(this)"><span class="cat-emoji">ðŸ“œ</span><span class="cat-name">HISTORIA</span></div>
-        <div class="cat-btn" data-cat="ciencia" onclick="selectCategory(this)"><span class="cat-emoji">ðŸ”¬</span><span class="cat-name">CIENCIA</span></div>
-        <div class="cat-btn" data-cat="geografia" onclick="selectCategory(this)"><span class="cat-emoji">ðŸŒ</span><span class="cat-name">GEOGRAFÃA</span></div>
-        <div class="cat-btn" data-cat="arte" onclick="selectCategory(this)"><span class="cat-emoji">ðŸŽ¨</span><span class="cat-name">ARTE</span></div>
-        <div class="cat-btn" data-cat="deportes" onclick="selectCategory(this)"><span class="cat-emoji">âš½</span><span class="cat-name">DEPORTES</span></div>
-        <div class="cat-btn" data-cat="naturaleza" onclick="selectCategory(this)"><span class="cat-emoji">ðŸŒ¿</span><span class="cat-name">NATURALEZA</span></div>
-        <div class="cat-btn" data-cat="musica" onclick="selectCategory(this)"><span class="cat-emoji">ðŸŽµ</span><span class="cat-name">MÃšSICA</span></div>
-        <div class="cat-btn" data-cat="mitologia" onclick="selectCategory(this)"><span class="cat-emoji">âš¡</span><span class="cat-name">MITOLOGÃA</span></div>
-        <div class="cat-btn" data-cat="cocina" onclick="selectCategory(this)"><span class="cat-emoji">ðŸ³</span><span class="cat-name">COCINA</span></div>
+        <div class="cat-btn selected" data-cat="historia" onclick="selectCategory(this)"><span class="cat-emoji">📜</span><span class="cat-name">HISTORIA</span></div>
+        <div class="cat-btn" data-cat="ciencia" onclick="selectCategory(this)"><span class="cat-emoji">🔬</span><span class="cat-name">CIENCIA</span></div>
+        <div class="cat-btn" data-cat="geografia" onclick="selectCategory(this)"><span class="cat-emoji">🌍</span><span class="cat-name">GEOGRAFÍA</span></div>
+        <div class="cat-btn" data-cat="arte" onclick="selectCategory(this)"><span class="cat-emoji">🎨</span><span class="cat-name">ARTE</span></div>
+        <div class="cat-btn" data-cat="deportes" onclick="selectCategory(this)"><span class="cat-emoji">⚽</span><span class="cat-name">DEPORTES</span></div>
+        <div class="cat-btn" data-cat="naturaleza" onclick="selectCategory(this)"><span class="cat-emoji">🌿</span><span class="cat-name">NATURALEZA</span></div>
+        <div class="cat-btn" data-cat="musica" onclick="selectCategory(this)"><span class="cat-emoji">🎵</span><span class="cat-name">MÚSICA</span></div>
+        <div class="cat-btn" data-cat="mitologia" onclick="selectCategory(this)"><span class="cat-emoji">⚡</span><span class="cat-name">MITOLOGÍA</span></div>
+        <div class="cat-btn" data-cat="cocina" onclick="selectCategory(this)"><span class="cat-emoji">🍳</span><span class="cat-name">COCINA</span></div>
       </div>
     </div>
 
     <!-- Question area -->
     <div id="temple-question-area">
-      <div id="temple-healer">ðŸ§</div>
+      <div id="temple-healer">🧝</div>
       <div id="temple-question-box">
-        <div id="temple-question-text">SeleccionÃ¡ una categorÃ­a y el curandero te harÃ¡ una pregunta. RespondÃ© bien para recuperar vida.</div>
+        <div id="temple-question-text">Seleccioná una categoría y el curandero te hará una pregunta. Respondé bien para recuperar vida.</div>
       </div>
       <div id="temple-answers"></div>
       <div id="temple-feedback"></div>
-      <button id="temple-next-btn" onclick="templeNextQuestion()">SIGUIENTE PREGUNTA â†’</button>
+      <button id="temple-next-btn" onclick="templeNextQuestion()">SIGUIENTE PREGUNTA →</button>
     </div>
-    <button id="temple-back-btn" onclick="templeBack()">â† VOLVER AL MENÃš</button>
+    <button id="temple-back-btn" onclick="templeBack()">← VOLVER AL MENÚ</button>
   </div>
 
 
@@ -310,11 +310,11 @@
     box-shadow:0 0 20px rgba(240,192,64,0.5), 0 4px 16px rgba(0,0,0,0.9);
     text-shadow:0 0 10px var(--gold);
     white-space:nowrap;
-  ">âš¡ JUGAR</button>
+  ">⚡ JUGAR</button>
 </div>
 
 <div class="overlay" id="end-overlay" style="display:none">
-  <div class="big-emoji" id="end-emoji">ðŸ†</div>
+  <div class="big-emoji" id="end-emoji">🏆</div>
   <h1 id="end-title">Victoria</h1>
   <p id="end-msg"></p>
   <div id="score-display">
@@ -323,20 +323,20 @@
     <div id="score-rank"></div>
   </div>
   <button class="overlay-btn" onclick="restartGame()">JUGAR DE NUEVO</button>
-  <button class="overlay-btn secondary" onclick="goToMenu()" style="margin-top:8px">â˜° MENÃš PRINCIPAL</button>
+  <button class="overlay-btn secondary" onclick="goToMenu()" style="margin-top:8px">☰ MENÚ PRINCIPAL</button>
 </div>
 
 <!-- FARM END OVERLAY -->
 <div class="overlay" id="farm-end-overlay">
-  <div class="big-emoji">ðŸ•·ï¸</div>
-  <h1 style="color:#80e040;text-shadow:0 0 20px #40a020">Â¡SALISTE!</h1>
+  <div class="big-emoji">🕷️</div>
+  <h1 style="color:#80e040;text-shadow:0 0 20px #40a020">¡SALISTE!</h1>
   <p id="farm-end-summary"></p>
   <div class="loot-list" id="farm-loot-list"></div>
   <button class="overlay-btn" style="background:linear-gradient(135deg,#1a3a08,#2a6010);color:#80e040;border-color:#40a020;margin-top:8px" onclick="closeFarmEnd()">CONTINUAR</button>
 </div>
 
 <div id="menu-confirm">
-  <p>Â¿Salir al menÃº?<br><span style="font-size:11px;color:var(--muted)">Se perderÃ¡ el progreso de esta batalla.</span></p>
+  <p>¿Salir al menú?<br><span style="font-size:11px;color:var(--muted)">Se perderá el progreso de esta batalla.</span></p>
   <div class="confirm-row">
     <button class="confirm-btn" id="confirm-yes" onclick="confirmGoMenu()">SALIR</button>
     <button class="confirm-btn" id="confirm-no" onclick="closeMenuConfirm()">CANCELAR</button>
@@ -345,54 +345,54 @@
 
   <!-- RECIPES OVERLAY -->
   <div id="recipes-overlay">
-    <div id="recipes-title">ðŸ“– LIBRO DE RECETAS</div>
+    <div id="recipes-title">📖 LIBRO DE RECETAS</div>
 
     <div class="recipe-card">
       <div class="recipe-canvas-wrap"><canvas id="rc-basic" width="90" height="90"></canvas></div>
       <div class="recipe-info">
-        <div class="recipe-name">âœ–ï¸ GOLPE ARCANO</div>
-        <div class="recipe-desc">DibujÃ¡ una <strong style="color:#ff8080">X</strong> con pociÃ³n roja</div>
-        <div class="recipe-cost">ðŸ”´Ã—1</div>
-        <div class="recipe-effect">DaÃ±o: 25â€“50 HP al enemigo</div>
+        <div class="recipe-name">✖️ GOLPE ARCANO</div>
+        <div class="recipe-desc">Dibujá una <strong style="color:#ff8080">X</strong> con poción roja</div>
+        <div class="recipe-cost">🔴×1</div>
+        <div class="recipe-effect">Daño: 25–50 HP al enemigo</div>
       </div>
     </div>
 
     <div class="recipe-card">
       <div class="recipe-canvas-wrap"><canvas id="rc-attack" width="90" height="90"></canvas></div>
       <div class="recipe-info">
-        <div class="recipe-name">ðŸ”¥ BOLA DE FUEGO</div>
-        <div class="recipe-desc">DibujÃ¡ un <strong style="color:#ff8080">cÃ­rculo</strong> con pociÃ³n roja<br>luego un <strong style="color:#8080ff">punto</strong> con pociÃ³n azul</div>
-        <div class="recipe-cost">ðŸ”´Ã—1 + ðŸ”µÃ—1</div>
-        <div class="recipe-effect">DaÃ±o: 50â€“100 HP al enemigo</div>
+        <div class="recipe-name">🔥 BOLA DE FUEGO</div>
+        <div class="recipe-desc">Dibujá un <strong style="color:#ff8080">círculo</strong> con poción roja<br>luego un <strong style="color:#8080ff">punto</strong> con poción azul</div>
+        <div class="recipe-cost">🔴×1 + 🔵×1</div>
+        <div class="recipe-effect">Daño: 50–100 HP al enemigo</div>
       </div>
     </div>
 
     <div class="recipe-card">
       <div class="recipe-canvas-wrap"><canvas id="rc-heal" width="90" height="90"></canvas></div>
       <div class="recipe-info">
-        <div class="recipe-name">ðŸ’š CURACIÃ“N Ã‰LFICA</div>
-        <div class="recipe-desc">DibujÃ¡ un <strong style="color:#80ff80">triÃ¡ngulo</strong> con pociÃ³n verde<br>(3 lados o trazo en V cerrado)</div>
-        <div class="recipe-cost">ðŸŸ¢Ã—1</div>
-        <div class="recipe-effect">Cura: 40â€“80 HP propios</div>
+        <div class="recipe-name">💚 CURACIÓN ÉLFICA</div>
+        <div class="recipe-desc">Dibujá un <strong style="color:#80ff80">triángulo</strong> con poción verde<br>(3 lados o trazo en V cerrado)</div>
+        <div class="recipe-cost">🟢×1</div>
+        <div class="recipe-effect">Cura: 40–80 HP propios</div>
       </div>
     </div>
 
     <div class="recipe-card">
       <div class="recipe-canvas-wrap"><canvas id="rc-shield" width="90" height="90"></canvas></div>
       <div class="recipe-info">
-        <div class="recipe-name">ðŸ›¡ï¸ ESCUDO ARCANO</div>
-        <div class="recipe-desc">DibujÃ¡ un <strong style="color:#8080ff">cuadrado</strong> con pociÃ³n azul<br>(solo azul, sin rojo)</div>
-        <div class="recipe-cost">ðŸ”µÃ—1</div>
-        <div class="recipe-effect">Absorbe 50 HP de daÃ±o</div>
+        <div class="recipe-name">🛡️ ESCUDO ARCANO</div>
+        <div class="recipe-desc">Dibujá un <strong style="color:#8080ff">cuadrado</strong> con poción azul<br>(solo azul, sin rojo)</div>
+        <div class="recipe-cost">🔵×1</div>
+        <div class="recipe-effect">Absorbe 50 HP de daño</div>
       </div>
     </div>
 
     <div class="recipe-card locked" id="rc-card-sawblade">
       <div class="recipe-canvas-wrap"><canvas id="rc-sawblade" width="90" height="90"></canvas></div>
       <div class="recipe-info">
-        <div class="recipe-name">ðŸ”± ATAQUE SERRUCHO</div>
-        <div class="recipe-desc">DibujÃ¡ un <strong style="color:#ff9040">zig-zag</strong> con pociÃ³n roja<br>(3 picos en horizontal)</div>
-        <div class="recipe-cost">ðŸ”´Ã—2 + ðŸ”µÃ—1 Â· Solo 2 usos por combate</div>
+        <div class="recipe-name">🔱 ATAQUE SERRUCHO</div>
+        <div class="recipe-desc">Dibujá un <strong style="color:#ff9040">zig-zag</strong> con poción roja<br>(3 picos en horizontal)</div>
+        <div class="recipe-cost">🔴×2 + 🔵×1 · Solo 2 usos por combate</div>
         <div class="recipe-effect">Quita 50% vida enemigo + regenera 20% propia</div>
         <div class="recipe-unlock-bar" id="sawblade-unlock-bar">
           <div class="recipe-unlock-label">PROGRESO: <span id="sawblade-parts-label">0/4 partes</span></div>
@@ -403,27 +403,27 @@
             <div class="recipe-unlock-pip" id="sawblade-pip-3"></div>
           </div>
         </div>
-        <div class="recipe-unlocked-badge" id="sawblade-unlocked-badge" style="display:none">âœ… DESBLOQUEADO</div>
+        <div class="recipe-unlocked-badge" id="sawblade-unlocked-badge" style="display:none">✅ DESBLOQUEADO</div>
       </div>
     </div>
-    <button id="recipes-close" onclick="closeRecipes()">âœ• CERRAR</button>
+    <button id="recipes-close" onclick="closeRecipes()">✕ CERRAR</button>
   </div>
 
   <!-- ===== RECORDS SCREEN ===== -->
   <div id="screen-records" class="screen">
     <div id="records-header">
-      <div id="records-title">ðŸ† TABLA DE RECORDS</div>
-      <button style="background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer" onclick="showScreen('menu')">âœ•</button>
+      <div id="records-title">🏆 TABLA DE RECORDS</div>
+      <button style="background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer" onclick="showScreen('menu')">✕</button>
     </div>
     <div id="records-list"></div>
-    <button id="records-clear" onclick="clearRecords()">ðŸ—‘ï¸ BORRAR RECORDS</button>
+    <button id="records-clear" onclick="clearRecords()">🗑️ BORRAR RECORDS</button>
   </div>
 
   <!-- ===== INVENTORY SCREEN ===== -->
   <div id="screen-inventory" class="screen">
     <div id="inv-header">
-      <div id="inv-title">ðŸŽ’ INVENTARIO</div>
-      <button style="background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer" onclick="showScreen('menu')">âœ•</button>
+      <div id="inv-title">🎒 INVENTARIO</div>
+      <button style="background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer" onclick="showScreen('menu')">✕</button>
     </div>
     <div id="inv-body">
       <div id="inv-grid">
@@ -436,25 +436,25 @@
         <div id="inv-detail-progress"></div>
       </div>
     </div>
-    <button id="btn-vestidor" onclick="showScreen('vestidor');renderVestidor()">ðŸ‘Ÿ VESTIDOR DE ZAPATILLAS</button>
-    <button id="inv-back" onclick="showScreen('menu')">â† VOLVER AL MENÃš</button>
+    <button id="btn-vestidor" onclick="showScreen('vestidor');renderVestidor()">👟 VESTIDOR DE ZAPATILLAS</button>
+    <button id="inv-back" onclick="showScreen('menu')">← VOLVER AL MENÚ</button>
   </div>
 
   <!-- ===== TUTORIAL SCREEN ===== -->
   <div id="screen-tutorial" class="screen">
     <div id="tut-header">
-      <div id="tut-header-title">ðŸ“˜ TUTORIAL</div>
-      <button id="tut-close" onclick="showScreen('menu')">â† VOLVER</button>
+      <div id="tut-header-title">📘 TUTORIAL</div>
+      <button id="tut-close" onclick="showScreen('menu')">← VOLVER</button>
     </div>
 
     <!-- Tabs -->
     <div id="tut-tabs">
-      <button class="tut-tab active" onclick="showTutTab('combate',this)">âš”ï¸ COMBATE</button>
-      <button class="tut-tab" onclick="showTutTab('hechizos',this)">âœ¨ HECHIZOS</button>
-      <button class="tut-tab" onclick="showTutTab('pasillos',this)">ðŸ•·ï¸ PASILLOS</button>
-      <button class="tut-tab" onclick="showTutTab('templo',this)">ðŸ›ï¸ TEMPLO</button>
-      <button class="tut-tab" onclick="showTutTab('pociones',this)">ðŸ§ª POCIONES</button>
-      <button class="tut-tab" onclick="showTutTab('extras',this)">ðŸŽ’ EXTRAS</button>
+      <button class="tut-tab active" onclick="showTutTab('combate',this)">⚔️ COMBATE</button>
+      <button class="tut-tab" onclick="showTutTab('hechizos',this)">✨ HECHIZOS</button>
+      <button class="tut-tab" onclick="showTutTab('pasillos',this)">🕷️ PASILLOS</button>
+      <button class="tut-tab" onclick="showTutTab('templo',this)">🏛️ TEMPLO</button>
+      <button class="tut-tab" onclick="showTutTab('pociones',this)">🧪 POCIONES</button>
+      <button class="tut-tab" onclick="showTutTab('extras',this)">🎒 EXTRAS</button>
     </div>
 
     <div id="tut-content">
@@ -462,31 +462,31 @@
       <!-- COMBATE -->
       <div class="tut-section active" id="tut-combate">
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ—¡ï¸ OBJETIVO</div>
-          <p>DerrotÃ¡ al <strong>Troll Oscuro</strong> (500 HP) antes de que te elimine a vos (300 HP). Cada batalla que ganÃ¡s te da puntos y la posibilidad de ganar una receta especial.</p>
+          <div class="tut-card-title">🗡️ OBJETIVO</div>
+          <p>Derrotá al <strong>Troll Oscuro</strong> (500 HP) antes de que te elimine a vos (300 HP). Cada batalla que ganás te da puntos y la posibilidad de ganar una receta especial.</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">â±ï¸ TURNOS</div>
-          <p>TenÃ©s <strong>10 segundos por turno</strong> para lanzar todos los hechizos que puedas. PodÃ©s lanzar varios hechizos seguidos mientras el tiempo no se agote. Al terminar el tiempo, el Troll actÃºa.</p>
+          <div class="tut-card-title">⏱️ TURNOS</div>
+          <p>Tenés <strong>10 segundos por turno</strong> para lanzar todos los hechizos que puedas. Podés lanzar varios hechizos seguidos mientras el tiempo no se agote. Al terminar el tiempo, el Troll actúa.</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ‘¹ EL TROLL</div>
+          <div class="tut-card-title">👹 EL TROLL</div>
           <p>El Troll tiene acciones aleatorias cada turno:</p>
           <div class="tut-highlight">
-            âš”ï¸ Ataca: 20â€“80 daÃ±o<br>
-            ðŸ’š Se cura: 30â€“80 HP<br>
-            El enemigo siempre anuncia su prÃ³xima acciÃ³n antes de actuar.
+            ⚔️ Ataca: 20–80 daño<br>
+            💚 Se cura: 30–80 HP<br>
+            El enemigo siempre anuncia su próxima acción antes de actuar.
           </div>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ† PUNTAJE</div>
-          <p>Al vencer calculÃ¡s tu score:</p>
+          <div class="tut-card-title">🏆 PUNTAJE</div>
+          <p>Al vencer calculás tu score:</p>
           <div class="tut-highlight">
             Base: 10.000 pts<br>
-            âˆ’ 1 pt por cada HP que perdiste<br>
-            âˆ’ 1.000 pts por cada turno que usaste<br><br>
-            â­ Legendario: 9.000+ &nbsp;|&nbsp; ðŸ’œ Maestro: 7.000+<br>
-            ðŸ”µ Experto: 5.000+ &nbsp;|&nbsp; ðŸŸ¢ Aprendiz: 3.000+
+            − 1 pt por cada HP que perdiste<br>
+            − 1.000 pts por cada turno que usaste<br><br>
+            ⭐ Legendario: 9.000+ &nbsp;|&nbsp; 💜 Maestro: 7.000+<br>
+            🔵 Experto: 5.000+ &nbsp;|&nbsp; 🟢 Aprendiz: 3.000+
           </div>
         </div>
       </div>
@@ -494,43 +494,43 @@
       <!-- HECHIZOS -->
       <div class="tut-section" id="tut-hechizos">
         <div class="tut-card">
-          <div class="tut-card-title">âœï¸ CÃ“MO DIBUJAR</div>
-          <p>SeleccionÃ¡ una <strong>pociÃ³n de color</strong> con los botones, luego dibujÃ¡ el patrÃ³n en el canvas. PresionÃ¡ <strong>âš¡ LANZAR</strong> para ejecutar el hechizo. TenÃ©s 3 segundos para completar el dibujo.</p>
+          <div class="tut-card-title">✏️ CÓMO DIBUJAR</div>
+          <p>Seleccioná una <strong>poción de color</strong> con los botones, luego dibujá el patrón en el canvas. Presioná <strong>⚡ LANZAR</strong> para ejecutar el hechizo. Tenés 3 segundos para completar el dibujo.</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ“œ HECHIZOS BÃSICOS</div>
+          <div class="tut-card-title">📜 HECHIZOS BÁSICOS</div>
           <div class="tut-spell-row">
-            <div class="tut-spell-icon">âš”ï¸</div>
+            <div class="tut-spell-icon">⚔️</div>
             <div class="tut-spell-info">
               <b>ATAQUE DE FUEGO</b>
-              DibujÃ¡ un <strong style="color:#ff8080">cÃ­rculo</strong> con ðŸ”´ roja â†’ aparece un botÃ³n azul central â†’ tocalo â†’ LANZAR<br>
-              <span style="color:var(--gold)">Costo: ðŸ”´Ã—1 + ðŸ”µÃ—1 &nbsp;|&nbsp; DaÃ±o: 50â€“100</span>
+              Dibujá un <strong style="color:#ff8080">círculo</strong> con 🔴 roja → aparece un botón azul central → tocalo → LANZAR<br>
+              <span style="color:var(--gold)">Costo: 🔴×1 + 🔵×1 &nbsp;|&nbsp; Daño: 50–100</span>
             </div>
           </div>
           <div class="tut-spell-row">
-            <div class="tut-spell-icon">ðŸ’š</div>
+            <div class="tut-spell-icon">💚</div>
             <div class="tut-spell-info">
-              <b>CURACIÃ“N Ã‰LFICA</b>
-              DibujÃ¡ un <strong style="color:#80ff80">triÃ¡ngulo</strong> con ðŸŸ¢ verde â†’ LANZAR<br>
-              <span style="color:var(--gold)">Costo: ðŸŸ¢Ã—1 &nbsp;|&nbsp; Cura: 40â€“80 HP</span>
+              <b>CURACIÓN ÉLFICA</b>
+              Dibujá un <strong style="color:#80ff80">triángulo</strong> con 🟢 verde → LANZAR<br>
+              <span style="color:var(--gold)">Costo: 🟢×1 &nbsp;|&nbsp; Cura: 40–80 HP</span>
             </div>
           </div>
           <div class="tut-spell-row">
-            <div class="tut-spell-icon">ðŸ›¡ï¸</div>
+            <div class="tut-spell-icon">🛡️</div>
             <div class="tut-spell-info">
               <b>ESCUDO ARCANO</b>
-              DibujÃ¡ un <strong style="color:#8080ff">cuadrado</strong> con ðŸ”µ azul â†’ LANZAR<br>
-              <span style="color:var(--gold)">Costo: ðŸ”µÃ—1 &nbsp;|&nbsp; Absorbe 50 daÃ±o</span>
+              Dibujá un <strong style="color:#8080ff">cuadrado</strong> con 🔵 azul → LANZAR<br>
+              <span style="color:var(--gold)">Costo: 🔵×1 &nbsp;|&nbsp; Absorbe 50 daño</span>
             </div>
           </div>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ”± HECHIZO SERRUCHO</div>
-          <p>Hechizo especial que se <strong>desbloquea con una receta</strong> que dropea el Troll. DibujÃ¡ un zig-zag horizontal con ðŸ”´ + botÃ³n azul.</p>
+          <div class="tut-card-title">🔱 HECHIZO SERRUCHO</div>
+          <p>Hechizo especial que se <strong>desbloquea con una receta</strong> que dropea el Troll. Dibujá un zig-zag horizontal con 🔴 + botón azul.</p>
           <div class="tut-highlight">
-            Costo: ðŸ”´Ã—2 + ðŸ”µÃ—1<br>
+            Costo: 🔴×2 + 🔵×1<br>
             Efecto: quita 50% HP actual del enemigo + regenera 20% HP tuyo<br>
-            Solo 2 usos por combate â€” conseguÃ­ la receta en el libro de recetas.
+            Solo 2 usos por combate — conseguí la receta en el libro de recetas.
           </div>
         </div>
       </div>
@@ -538,47 +538,47 @@
       <!-- PASILLOS -->
       <div class="tut-section" id="tut-pasillos">
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ—ºï¸ QUÃ‰ SON LOS PASILLOS</div>
-          <p>Zona de farmeo donde matÃ¡s bichos para <strong>conseguir pociones</strong>. TenÃ©s <strong>20 segundos</strong> por sesiÃ³n. Los bichos te atacan automÃ¡ticamente.</p>
+          <div class="tut-card-title">🗺️ QUÉ SON LOS PASILLOS</div>
+          <p>Zona de farmeo donde matás bichos para <strong>conseguir pociones</strong>. Tenés <strong>20 segundos</strong> por sesión. Los bichos te atacan automáticamente.</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ•·ï¸ PASILLO DE ARAÃ‘AS</div>
-          <p>AraÃ±as con <strong>40 HP</strong>. Muerden cada 3, 6 u 8 segundos (5% de tu HP mÃ¡ximo). Drop al terminar: <strong>ðŸ”´ pociones rojas</strong>.</p>
+          <div class="tut-card-title">🕷️ PASILLO DE ARAÑAS</div>
+          <p>Arañas con <strong>40 HP</strong>. Muerden cada 3, 6 u 8 segundos (5% de tu HP máximo). Drop al terminar: <strong>🔴 pociones rojas</strong>.</p>
           <div class="tut-highlight">
-            âš¡ Hechizo: recuperÃ¡s lo gastado + bonus (hasta 70% extra)<br>
-            ðŸ‘Š PuÃ±o: 30% chance de ðŸ”´+1 por kill (sin gastar pociones)
+            ⚡ Hechizo: recuperás lo gastado + bonus (hasta 70% extra)<br>
+            👊 Puño: 30% chance de 🔴+1 por kill (sin gastar pociones)
           </div>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸª² PASILLO DE ESCARABAJOS</div>
-          <p>Escarabajos con <strong>80 HP</strong> â€” el doble de clicks con puÃ±o. Drop: <strong>ðŸ”µ azules + ðŸ”´ rojas</strong>, pero con tiers a la mitad.</p>
+          <div class="tut-card-title">🪲 PASILLO DE ESCARABAJOS</div>
+          <p>Escarabajos con <strong>80 HP</strong> — el doble de clicks con puño. Drop: <strong>🔵 azules + 🔴 rojas</strong>, pero con tiers a la mitad.</p>
           <div class="tut-highlight">
-            ðŸ‘Š PuÃ±o: 30% chance de ðŸ”´ o ðŸ”µ +1 por kill (50/50)<br>
-            Tiers bonus: hasta 35% (vs 70% de araÃ±as)
+            👊 Puño: 30% chance de 🔴 o 🔵 +1 por kill (50/50)<br>
+            Tiers bonus: hasta 35% (vs 70% de arañas)
           </div>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ‘Š EL PUÃ‘O</div>
-          <p>BotÃ³n naranja a la derecha de LANZAR. Hace <strong>3â€“4 de daÃ±o</strong> sin gastar pociones. Ãštil cuando no querÃ©s gastar o ya te quedaste sin stock. Siempre peor que un hechizo en drops.</p>
+          <div class="tut-card-title">👊 EL PUÑO</div>
+          <p>Botón naranja a la derecha de LANZAR. Hace <strong>3–4 de daño</strong> sin gastar pociones. Útil cuando no querés gastar o ya te quedaste sin stock. Siempre peor que un hechizo en drops.</p>
         </div>
       </div>
 
       <!-- TEMPLO -->
       <div class="tut-section" id="tut-templo">
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ›ï¸ EL TEMPLO</div>
-          <p>Zona de curaciÃ³n tranquila. El curandero te hace <strong>preguntas de trivia</strong>. RespondÃ© bien para recuperar vida. Sin presiÃ³n de tiempo.</p>
+          <div class="tut-card-title">🏛️ EL TEMPLO</div>
+          <p>Zona de curación tranquila. El curandero te hace <strong>preguntas de trivia</strong>. Respondé bien para recuperar vida. Sin presión de tiempo.</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸª™ MONEDAS</div>
-          <p>EmpezÃ¡s con <strong>50 monedas</strong>. Cada respuesta incorrecta te cuesta <strong>5 monedas</strong>. Sin monedas no podÃ©s seguir. Se resetean al reiniciar el juego.</p>
+          <div class="tut-card-title">🪙 MONEDAS</div>
+          <p>Empezás con <strong>50 monedas</strong>. Cada respuesta incorrecta te cuesta <strong>5 monedas</strong>. Sin monedas no podés seguir. Se resetean al reiniciar el juego.</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">â¤ï¸ CURACIÃ“N</div>
-          <p>Cada respuesta correcta recupera <strong>+10% de tu HP mÃ¡ximo</strong> (~30 HP). La vida se acumula hasta el mÃ¡ximo de 300 HP.</p>
+          <div class="tut-card-title">❤️ CURACIÓN</div>
+          <p>Cada respuesta correcta recupera <strong>+10% de tu HP máximo</strong> (~30 HP). La vida se acumula hasta el máximo de 300 HP.</p>
           <div class="tut-highlight">
-            9 categorÃ­as: Historia, Ciencia, GeografÃ­a, Arte,<br>
-            Deportes, Naturaleza, MÃºsica, MitologÃ­a, Cocina
+            9 categorías: Historia, Ciencia, Geografía, Arte,<br>
+            Deportes, Naturaleza, Música, Mitología, Cocina
           </div>
         </div>
       </div>
@@ -586,40 +586,40 @@
       <!-- POCIONES -->
       <div class="tut-section" id="tut-pociones">
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ§ª INVENTARIO DE POCIONES</div>
-          <p>Las pociones <strong>persisten entre sesiones</strong>. Lo que gastÃ¡s en el pasillo lo gastÃ¡s de verdad, y lo que farmeas lo llevÃ¡s al combate. Solo se resetean al "Jugar de Nuevo".</p>
+          <div class="tut-card-title">🧪 INVENTARIO DE POCIONES</div>
+          <p>Las pociones <strong>persisten entre sesiones</strong>. Lo que gastás en el pasillo lo gastás de verdad, y lo que farmeas lo llevás al combate. Solo se resetean al "Jugar de Nuevo".</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ”´ POCIÃ“N ROJA</div>
-          <p>Usada en: <strong>Ataque</strong> (circulo), <strong>Serrucho</strong> (zig-zag).<br>Se farmea en: Pasillo de AraÃ±as y Escarabajos.</p>
+          <div class="tut-card-title">🔴 POCIÓN ROJA</div>
+          <p>Usada en: <strong>Ataque</strong> (circulo), <strong>Serrucho</strong> (zig-zag).<br>Se farmea en: Pasillo de Arañas y Escarabajos.</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ”µ POCIÃ“N AZUL</div>
-          <p>Usada en: <strong>Ataque</strong> (botÃ³n central), <strong>Escudo</strong> (cuadrado), <strong>Serrucho</strong>.<br>Se farmea en: Pasillo de Escarabajos.</p>
+          <div class="tut-card-title">🔵 POCIÓN AZUL</div>
+          <p>Usada en: <strong>Ataque</strong> (botón central), <strong>Escudo</strong> (cuadrado), <strong>Serrucho</strong>.<br>Se farmea en: Pasillo de Escarabajos.</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸŸ¢ POCIÃ“N VERDE</div>
-          <p>Usada en: <strong>CuraciÃ³n</strong> (triÃ¡ngulo) en combate y tambiÃ©n en el Pasillo para curarte mientras farmeas.<br>No tiene zona de farmeo especÃ­fica.</p>
+          <div class="tut-card-title">🟢 POCIÓN VERDE</div>
+          <p>Usada en: <strong>Curación</strong> (triángulo) en combate y también en el Pasillo para curarte mientras farmeas.<br>No tiene zona de farmeo específica.</p>
         </div>
       </div>
 
       <!-- EXTRAS -->
       <div class="tut-section" id="tut-extras">
         <div class="tut-card">
-          <div class="tut-card-title">â¤ï¸ VIDA PERSISTENTE</div>
-          <p>Tu HP se mantiene entre el combate, los pasillos y el templo. Si entrÃ¡s al pasillo con poca vida, las araÃ±as pueden eliminarte rÃ¡pido. UsÃ¡ el templo para recuperarte antes de combatir.</p>
+          <div class="tut-card-title">❤️ VIDA PERSISTENTE</div>
+          <p>Tu HP se mantiene entre el combate, los pasillos y el templo. Si entrás al pasillo con poca vida, las arañas pueden eliminarte rápido. Usá el templo para recuperarte antes de combatir.</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸŽ’ INVENTARIO</div>
-          <p>Guarda hasta <strong>10 items</strong>. Actualmente recibe fragmentos y recetas del boss. Con 4 fragmentos ðŸ”§ o 1 receta ðŸ“œ directa (30% de chance al vencer) desbloqueÃ¡s el Serrucho.</p>
+          <div class="tut-card-title">🎒 INVENTARIO</div>
+          <p>Guarda hasta <strong>10 items</strong>. Actualmente recibe fragmentos y recetas del boss. Con 4 fragmentos 🔧 o 1 receta 📜 directa (30% de chance al vencer) desbloqueás el Serrucho.</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ“– LIBRO DE RECETAS</div>
-          <p>Muestra todos los hechizos disponibles con su patrÃ³n de dibujo, costo y efecto. TambiÃ©n muestra el progreso del Serrucho (cuÃ¡ntos fragmentos llevÃ¡s).</p>
+          <div class="tut-card-title">📖 LIBRO DE RECETAS</div>
+          <p>Muestra todos los hechizos disponibles con su patrón de dibujo, costo y efecto. También muestra el progreso del Serrucho (cuántos fragmentos llevás).</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">ðŸ† TABLA DE RECORDS</div>
-          <p>Guarda tus <strong>10 mejores puntajes</strong> en el dispositivo. Muestra turnos usados, HP restante, fecha y rango obtenido. Se borra manualmente si querÃ©s reiniciar.</p>
+          <div class="tut-card-title">🏆 TABLA DE RECORDS</div>
+          <p>Guarda tus <strong>10 mejores puntajes</strong> en el dispositivo. Muestra turnos usados, HP restante, fecha y rango obtenido. Se borra manualmente si querés reiniciar.</p>
         </div>
       </div>
 
@@ -629,27 +629,27 @@
   <!-- ===== RANKING SCREEN ===== -->
   <div id="screen-ranking" class="screen">
     <div id="ranking-header">
-      <div id="ranking-title">ðŸ… RANKING GLOBAL</div>
-      <button style="background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer" onclick="showScreen('menu')">âœ•</button>
+      <div id="ranking-title">🏅 RANKING GLOBAL</div>
+      <button style="background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer" onclick="showScreen('menu')">✕</button>
     </div>
     <div id="ranking-content">
       <div class="stat-grid" id="ranking-stats"></div>
-      <div style="font-size:10px;color:var(--muted);letter-spacing:1px;margin-bottom:8px">ÃšLTIMAS PARTIDAS</div>
+      <div style="font-size:10px;color:var(--muted);letter-spacing:1px;margin-bottom:8px">ÚLTIMAS PARTIDAS</div>
       <div id="ranking-history"></div>
     </div>
-    <button id="ranking-reset" onclick="resetRanking()">ðŸ—‘ï¸ RESETEAR ESTADÃSTICAS</button>
+    <button id="ranking-reset" onclick="resetRanking()">🗑️ RESETEAR ESTADÍSTICAS</button>
   </div>
 
   <!-- ===== SHOP SCREEN ===== -->
   <div id="screen-shop" class="screen">
     <div class="shop-header">
-      <div class="shop-title">ðŸ‘Ÿ TIENDA</div>
-      <div class="shop-coins-display" id="shop-coins">ðŸª™ 0</div>
+      <div class="shop-title">👟 TIENDA</div>
+      <div class="shop-coins-display" id="shop-coins">🪙 0</div>
     </div>
     <div style="display:flex;gap:6px;padding:6px 12px;flex-shrink:0">
-      <button onclick="showScreen('vestidor');renderVestidor()" style="flex:1;padding:7px;border-radius:8px;border:1px solid #806040;background:rgba(40,24,0,0.7);color:#e0a030;font-family:'Cinzel',serif;font-size:10px;cursor:pointer">ðŸ‘Ÿ MI VESTIDOR</button>
-      <button onclick="showScreen('inventory');renderInventory()" style="flex:1;padding:7px;border-radius:8px;border:1px solid var(--border);background:var(--panel2);color:var(--muted);font-family:'Cinzel',serif;font-size:10px;cursor:pointer">ðŸŽ’ INVENTARIO</button>
-      <button onclick="showScreen('menu')" style="flex:1;padding:7px;border-radius:8px;border:1px solid var(--border);background:var(--panel2);color:var(--muted);font-family:'Cinzel',serif;font-size:10px;cursor:pointer">â† MENÃš</button>
+      <button onclick="showScreen('vestidor');renderVestidor()" style="flex:1;padding:7px;border-radius:8px;border:1px solid #806040;background:rgba(40,24,0,0.7);color:#e0a030;font-family:'Cinzel',serif;font-size:10px;cursor:pointer">👟 MI VESTIDOR</button>
+      <button onclick="showScreen('inventory');renderInventory()" style="flex:1;padding:7px;border-radius:8px;border:1px solid var(--border);background:var(--panel2);color:var(--muted);font-family:'Cinzel',serif;font-size:10px;cursor:pointer">🎒 INVENTARIO</button>
+      <button onclick="showScreen('menu')" style="flex:1;padding:7px;border-radius:8px;border:1px solid var(--border);background:var(--panel2);color:var(--muted);font-family:'Cinzel',serif;font-size:10px;cursor:pointer">← MENÚ</button>
     </div>
     <div id="shop-grid">
       <!-- items rendered by JS -->
@@ -660,12 +660,12 @@
   <!-- ===== VESTIDOR SCREEN ===== -->
   <div id="screen-vestidor" class="screen">
     <div class="shop-header">
-      <div class="shop-title">ðŸ‘Ÿ VESTIDOR</div>
+      <div class="shop-title">👟 VESTIDOR</div>
       <div id="vestidor-equipped-label">Equipado: <span id="vestidor-equipped-name">ninguno</span></div>
     </div>
     <div style="display:flex;gap:6px;padding:6px 12px;flex-shrink:0">
-      <button onclick="showScreen('shop');renderShop()" style="flex:1;padding:7px;border-radius:8px;border:1px solid #806040;background:rgba(40,24,0,0.7);color:#e0a030;font-family:'Cinzel',serif;font-size:10px;cursor:pointer">ðŸ›ï¸ IR A LA TIENDA</button>
-      <button onclick="showScreen('menu')" style="flex:1;padding:7px;border-radius:8px;border:1px solid var(--border);background:var(--panel2);color:var(--muted);font-family:'Cinzel',serif;font-size:10px;cursor:pointer">â† MENÃš</button>
+      <button onclick="showScreen('shop');renderShop()" style="flex:1;padding:7px;border-radius:8px;border:1px solid #806040;background:rgba(40,24,0,0.7);color:#e0a030;font-family:'Cinzel',serif;font-size:10px;cursor:pointer">🛍️ IR A LA TIENDA</button>
+      <button onclick="showScreen('menu')" style="flex:1;padding:7px;border-radius:8px;border:1px solid var(--border);background:var(--panel2);color:var(--muted);font-family:'Cinzel',serif;font-size:10px;cursor:pointer">← MENÚ</button>
     </div>
     <div id="vestidor-carousel">
       <!-- rendered by JS -->
@@ -673,9 +673,9 @@
   </div>
 
 
-  <!-- BUY MODAL â€” global overlay -->
+  <!-- BUY MODAL — global overlay -->
   <div id="buy-modal">
-    <div id="buy-modal-img" style="font-size:50px;display:flex;align-items:center;justify-content:center;width:120px;height:120px;border-radius:12px;background:rgba(20,15,5,0.9)">ðŸ‘Ÿ</div>
+    <div id="buy-modal-img" style="font-size:50px;display:flex;align-items:center;justify-content:center;width:120px;height:120px;border-radius:12px;background:rgba(20,15,5,0.9)">👟</div>
     <div id="buy-modal-name" style="font-family:'Cinzel Decorative',serif;font-size:15px;color:#e0a030;text-align:center"></div>
     <div id="buy-modal-price" style="font-size:22px;color:var(--gold);font-weight:700"></div>
     <div id="buy-modal-balance" style="font-size:11px;color:var(--muted)"></div>
