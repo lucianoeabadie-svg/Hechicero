@@ -80,7 +80,7 @@ function showIntro(){
   if(localStorage.getItem('sb_intro_seen')) return;
   introCurrentSlide = 0;
   renderIntroSlide();
-  document.getElementById('intro-overlay').style.display = 'flex';
+  document.getElementById('tutorial-slides').style.display = 'flex';
 }
 
 function renderIntroSlide(){
@@ -134,7 +134,7 @@ function introPrev(){
 }
 
 function closeIntro(){
-  document.getElementById('intro-overlay').style.display = 'none';
+  document.getElementById('tutorial-slides').style.display = 'none';
   localStorage.setItem('sb_intro_seen','1');
 }
 
@@ -427,7 +427,7 @@ function updateMenuPreview() {
 }
 
 function dismissIntro() {
-  document.getElementById('intro-overlay').style.display='none';
+  document.getElementById('tutorial-slides').style.display='none';
 }
 
 // ===================== BATTLE STATE =====================
