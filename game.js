@@ -427,7 +427,7 @@ function updateMenuPreview() {
 }
 
 function dismissIntro() {
-  document.getElementById('tutorial-slides').style.display='none';
+  document.getElementById('intro-overlay').style.display='none';
 }
 
 // ===================== BATTLE STATE =====================
