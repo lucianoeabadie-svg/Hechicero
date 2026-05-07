@@ -105,10 +105,12 @@
       </div>
     </div>
     <div id="spell-hints">
-      <div class="hint-card"><div class="hint-name">✖️ GOLPE ARCANO</div><div>🔴X roja</div></div>
-      <div class="hint-card"><div class="hint-name">🔥 BOLA DE FUEGO</div><div>🔴Círculo + 🔵Punto</div></div>
-      <div class="hint-card"><div class="hint-name">💚 CURACIÓN</div><div>🟢Triángulo</div></div>
-      <div class="hint-card"><div class="hint-name">🛡️ ESCUDO</div><div>🔵 Cuadrado azul</div></div>
+      <div class="hint-card"><div class="hint-name">⚡ GOLPE</div><div>🔴 X</div></div>
+      <div class="hint-card"><div class="hint-name">🔥 FUEGO</div><div>🔴🔴 Círculo</div></div>
+      <div class="hint-card"><div class="hint-name">🛡️ ESCUDO</div><div>🔵 ─ línea</div></div>
+      <div class="hint-card"><div class="hint-name">💚 CURAR</div><div>🟢 ↑ línea</div></div>
+      <div class="hint-card"><div class="hint-name">🌩️ RAYO</div><div>🔴🔵 zigzag</div></div>
+      <div class="hint-card"><div class="hint-name">🔺 VENENO</div><div>🟢🔴 triángulo</div></div>
     </div>
     <div id="draw-panel">
       <div id="draw-header">
@@ -124,8 +126,7 @@
       <div id="canvas-container">
         <canvas id="draw-canvas"></canvas>
         <canvas id="draw-guide-canvas"></canvas>
-        <button id="blue-dot-btn" onclick="pressBlueCenter()"></button>
-        <div id="canvas-hint">Seleccioná una poción<br>y dibujá tu hechizo</div>
+<div id="canvas-hint">Seleccioná una poción<br>y dibujá tu hechizo</div>
       </div>
       <div id="action-result"></div>
             <div id="btn-row">
@@ -350,7 +351,7 @@
     <div class="recipe-card">
       <div class="recipe-canvas-wrap"><canvas id="rc-basic" width="90" height="90"></canvas></div>
       <div class="recipe-info">
-        <div class="recipe-name">✖️ GOLPE ARCANO</div>
+        <div class="recipe-name">⚡ GOLPE ARCANO</div>
         <div class="recipe-desc">Dibujá una <strong style="color:#ff8080">X</strong> con poción roja</div>
         <div class="recipe-cost">🔴×1</div>
         <div class="recipe-effect">Daño: 25–50 HP al enemigo</div>
@@ -361,19 +362,9 @@
       <div class="recipe-canvas-wrap"><canvas id="rc-attack" width="90" height="90"></canvas></div>
       <div class="recipe-info">
         <div class="recipe-name">🔥 BOLA DE FUEGO</div>
-        <div class="recipe-desc">Dibujá un <strong style="color:#ff8080">círculo</strong> con poción roja<br>luego un <strong style="color:#8080ff">punto</strong> con poción azul</div>
-        <div class="recipe-cost">🔴×1 + 🔵×1</div>
+        <div class="recipe-desc">Dibujá un <strong style="color:#ff8080">círculo</strong> con poción roja<br>(¡sin azul! solo el círculo rojo)</div>
+        <div class="recipe-cost">🔴×2</div>
         <div class="recipe-effect">Daño: 50–100 HP al enemigo</div>
-      </div>
-    </div>
-
-    <div class="recipe-card">
-      <div class="recipe-canvas-wrap"><canvas id="rc-heal" width="90" height="90"></canvas></div>
-      <div class="recipe-info">
-        <div class="recipe-name">💚 CURACIÓN ÉLFICA</div>
-        <div class="recipe-desc">Dibujá un <strong style="color:#80ff80">triángulo</strong> con poción verde<br>(3 lados o trazo en V cerrado)</div>
-        <div class="recipe-cost">🟢×1</div>
-        <div class="recipe-effect">Cura: 40–80 HP propios</div>
       </div>
     </div>
 
@@ -381,9 +372,39 @@
       <div class="recipe-canvas-wrap"><canvas id="rc-shield" width="90" height="90"></canvas></div>
       <div class="recipe-info">
         <div class="recipe-name">🛡️ ESCUDO ARCANO</div>
-        <div class="recipe-desc">Dibujá un <strong style="color:#8080ff">cuadrado</strong> con poción azul<br>(solo azul, sin rojo)</div>
+        <div class="recipe-desc">Dibujá una <strong style="color:#8080ff">línea horizontal</strong> con poción azul<br>(swipe de izquierda a derecha)</div>
         <div class="recipe-cost">🔵×1</div>
         <div class="recipe-effect">Absorbe 50 HP de daño</div>
+      </div>
+    </div>
+
+    <div class="recipe-card">
+      <div class="recipe-canvas-wrap"><canvas id="rc-heal" width="90" height="90"></canvas></div>
+      <div class="recipe-info">
+        <div class="recipe-name">💚 CURACIÓN ÉLFICA</div>
+        <div class="recipe-desc">Dibujá una <strong style="color:#80ff80">línea vertical</strong> con poción verde<br>(swipe de abajo hacia arriba)</div>
+        <div class="recipe-cost">🟢×1</div>
+        <div class="recipe-effect">Cura: 40–80 HP propios</div>
+      </div>
+    </div>
+
+    <div class="recipe-card">
+      <div class="recipe-canvas-wrap"><canvas id="rc-lightning" width="90" height="90"></canvas></div>
+      <div class="recipe-info">
+        <div class="recipe-name">🌩️ RAYO ARCANO</div>
+        <div class="recipe-desc">Dibujá un <strong style="color:#ff8080">zigzag</strong> usando <strong>ambas</strong> pociones: roja y azul</div>
+        <div class="recipe-cost">🔴×1 + 🔵×1</div>
+        <div class="recipe-effect">Daño: 40–70 HP al enemigo</div>
+      </div>
+    </div>
+
+    <div class="recipe-card">
+      <div class="recipe-canvas-wrap"><canvas id="rc-poison" width="90" height="90"></canvas></div>
+      <div class="recipe-info">
+        <div class="recipe-name">🔺 VENENO OSCURO</div>
+        <div class="recipe-desc">Dibujá un <strong style="color:#80ff80">triángulo</strong> usando <strong>ambas</strong> pociones: verde y roja</div>
+        <div class="recipe-cost">🟢×1 + 🔴×1</div>
+        <div class="recipe-effect">Envenena al enemigo: −20 HP por turno durante 3 turnos</div>
       </div>
     </div>
 
@@ -391,7 +412,7 @@
       <div class="recipe-canvas-wrap"><canvas id="rc-sawblade" width="90" height="90"></canvas></div>
       <div class="recipe-info">
         <div class="recipe-name">🔱 ATAQUE SERRUCHO</div>
-        <div class="recipe-desc">Dibujá un <strong style="color:#ff9040">zig-zag</strong> con poción roja<br>(3 picos en horizontal)</div>
+        <div class="recipe-desc">Dibujá un <strong style="color:#ff9040">zig-zag</strong> con poción roja<br>(3 picos en horizontal — solo roja)</div>
         <div class="recipe-cost">🔴×2 + 🔵×1 · Solo 2 usos por combate</div>
         <div class="recipe-effect">Quita 50% vida enemigo + regenera 20% propia</div>
         <div class="recipe-unlock-bar" id="sawblade-unlock-bar">
@@ -495,42 +516,68 @@
       <div class="tut-section" id="tut-hechizos">
         <div class="tut-card">
           <div class="tut-card-title">✏️ CÓMO DIBUJAR</div>
-          <p>Seleccioná una <strong>poción de color</strong> con los botones, luego dibujá el patrón en el canvas. Presioná <strong>⚡ LANZAR</strong> para ejecutar el hechizo. Tenés 3 segundos para completar el dibujo.</p>
+          <p>Seleccioná una <strong>poción de color</strong> con los botones, dibujá el patrón en el canvas y presioná <strong>⚡ LANZAR</strong>. Podés combinar colores: primero dibujá con un color, luego cambiá y dibujá con otro, y recién entonces lanzá.</p>
         </div>
         <div class="tut-card">
-          <div class="tut-card-title">📜 HECHIZOS BÁSICOS</div>
+          <div class="tut-card-title">🔴 POCIONES ROJAS</div>
           <div class="tut-spell-row">
-            <div class="tut-spell-icon">⚔️</div>
+            <div class="tut-spell-icon">⚡</div>
             <div class="tut-spell-info">
-              <b>ATAQUE DE FUEGO</b>
-              Dibujá un <strong style="color:#ff8080">círculo</strong> con 🔴 roja → aparece un botón azul central → tocalo → LANZAR<br>
-              <span style="color:var(--gold)">Costo: 🔴×1 + 🔵×1 &nbsp;|&nbsp; Daño: 50–100</span>
+              <b>GOLPE ARCANO</b> — Dibujá una <strong style="color:#ff8080">X</strong> con 🔴 roja → LANZAR<br>
+              <span style="color:var(--gold)">Costo: 🔴×1 &nbsp;|&nbsp; Daño: 25–50</span>
             </div>
           </div>
           <div class="tut-spell-row">
-            <div class="tut-spell-icon">💚</div>
+            <div class="tut-spell-icon">🔥</div>
             <div class="tut-spell-info">
-              <b>CURACIÓN ÉLFICA</b>
-              Dibujá un <strong style="color:#80ff80">triángulo</strong> con 🟢 verde → LANZAR<br>
-              <span style="color:var(--gold)">Costo: 🟢×1 &nbsp;|&nbsp; Cura: 40–80 HP</span>
+              <b>BOLA DE FUEGO</b> — Dibujá un <strong style="color:#ff8080">círculo</strong> con 🔴 roja → LANZAR<br>
+              <span style="color:var(--gold)">Costo: 🔴×2 &nbsp;|&nbsp; Daño: 50–100</span>
             </div>
           </div>
+        </div>
+        <div class="tut-card">
+          <div class="tut-card-title">🔵 POCIONES AZULES</div>
           <div class="tut-spell-row">
             <div class="tut-spell-icon">🛡️</div>
             <div class="tut-spell-info">
-              <b>ESCUDO ARCANO</b>
-              Dibujá un <strong style="color:#8080ff">cuadrado</strong> con 🔵 azul → LANZAR<br>
+              <b>ESCUDO ARCANO</b> — Dibujá una <strong style="color:#8080ff">línea horizontal</strong> con 🔵 azul → LANZAR<br>
               <span style="color:var(--gold)">Costo: 🔵×1 &nbsp;|&nbsp; Absorbe 50 daño</span>
             </div>
           </div>
         </div>
         <div class="tut-card">
+          <div class="tut-card-title">🟢 POCIONES VERDES</div>
+          <div class="tut-spell-row">
+            <div class="tut-spell-icon">💚</div>
+            <div class="tut-spell-info">
+              <b>CURACIÓN ÉLFICA</b> — Dibujá una <strong style="color:#80ff80">línea vertical</strong> con 🟢 verde → LANZAR<br>
+              <span style="color:var(--gold)">Costo: 🟢×1 &nbsp;|&nbsp; Cura: 40–80 HP</span>
+            </div>
+          </div>
+        </div>
+        <div class="tut-card">
+          <div class="tut-card-title">⚗️ COMBINACIONES (2 colores)</div>
+          <div class="tut-spell-row">
+            <div class="tut-spell-icon">🌩️</div>
+            <div class="tut-spell-info">
+              <b>RAYO ARCANO</b> — Dibujá cualquier trazo con 🔴 roja, después cambiá a 🔵 azul y dibujá otro trazo → LANZAR<br>
+              <span style="color:var(--gold)">Costo: 🔴×1 + 🔵×1 &nbsp;|&nbsp; Daño: 40–70</span>
+            </div>
+          </div>
+          <div class="tut-spell-row">
+            <div class="tut-spell-icon">🔺</div>
+            <div class="tut-spell-info">
+              <b>VENENO OSCURO</b> — Dibujá un <strong style="color:#80ff80">triángulo</strong> con 🟢 verde, después agregá un trazo con 🔴 roja → LANZAR<br>
+              <span style="color:var(--gold)">Costo: 🟢×1 + 🔴×1 &nbsp;|&nbsp; −20 HP/turno ×3 turnos al enemigo</span>
+            </div>
+          </div>
+        </div>
+        <div class="tut-card">
           <div class="tut-card-title">🔱 HECHIZO SERRUCHO</div>
-          <p>Hechizo especial que se <strong>desbloquea con una receta</strong> que dropea el Troll. Dibujá un zig-zag horizontal con 🔴 + botón azul.</p>
+          <p>Hechizo especial que se <strong>desbloquea con una receta</strong> que dropea el Troll. Dibujá un <strong style="color:#ff9040">zig-zag horizontal</strong> solo con 🔴 roja (3 picos).</p>
           <div class="tut-highlight">
-            Costo: 🔴×2 + 🔵×1<br>
-            Efecto: quita 50% HP actual del enemigo + regenera 20% HP tuyo<br>
-            Solo 2 usos por combate — conseguí la receta en el libro de recetas.
+            Costo: 🔴×2 + 🔵×1 &nbsp;|&nbsp; Solo 2 usos por combate<br>
+            Efecto: quita 50% HP actual del enemigo + regenera 20% HP tuyo
           </div>
         </div>
       </div>
