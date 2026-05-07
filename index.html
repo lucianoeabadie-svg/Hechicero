@@ -17,6 +17,29 @@
   <div id="screen-dimmer"></div>
   <div id="medusa-flash"></div>
   <div id="global-coins-bar"><span>🪙</span><span id="gc-amount">0</span></div>
+
+  <!-- ===== INTRO TUTORIAL OVERLAY ===== -->
+  <div id="intro-overlay" style="display:none">
+    <div id="intro-box">
+      <button class="intro-close-btn" onclick="closeIntro()">✕</button>
+      <div id="intro-media"></div>
+      <div id="intro-title"></div>
+      <div id="intro-text"></div>
+      <div id="intro-dots"></div>
+      <div id="intro-buttons">
+        <button id="intro-btn-prev" onclick="introPrev()">← Atrás</button>
+        <button id="intro-btn-next" onclick="introNext()">Siguiente →</button>
+      </div>
+      <button id="intro-btn-skip" onclick="closeIntro()">Saltar tutorial</button>
+    </div>
+  </div>
+
+  <!-- ===== BATTLE TIP ===== -->
+  <div id="battle-tip">
+    <span id="battle-tip-icon"></span>
+    <span id="battle-tip-text"></span>
+    <button onclick="closeBattleTip()">✕</button>
+  </div>
   <div id="medusa-warning">🐍 ¡MIRADA DE MEDUSA!<br><span style="font-size:13px">-100 HP</span></div>
   <div id="turn-overlay">
     <div id="turn-overlay-icon"></div>
