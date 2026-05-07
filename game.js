@@ -34,6 +34,153 @@ document.addEventListener('contextmenu', function(e){
   }
 })();
 
+// ===================== INTRO TUTORIAL =====================
+// image y video están vacíos ahora — listos para agregar assets después
+const INTRO_SLIDES = [
+  {
+    emoji: '🏰',
+    title: 'La Torre del Pingozius',
+    text: 'La gran Cárcel de monstruos en la torre del Pingozius debe ser vaciada para ponerla a la venta, donde construirán un shopping. En esta nueva era, la fantasía ya no rinde.\n\nAldric el hechicero debe limpiar todos los calabozos y entregarlos antes de que termine el año.',
+    image: '',   // ej: 'intro_torre.png'
+    video: '',   // ej: 'intro_torre.mp4'
+  },
+  {
+    emoji: '🧪',
+    title: 'Las Pociones',
+    text: 'Tus únicos aliados son tres pociones mágicas.\n🔴 Roja — poder de ataque.\n🔵 Azul — fuerza defensiva.\n🟢 Verde — energía curativa.\n\nCada jefe tiene sus propias habilidades — conocerlos bien es clave para elegir qué pociones llevar. ¡Entrá siempre bien preparado!',
+    image: '',
+    video: '',
+  },
+  {
+    emoji: '✏️',
+    title: 'El Tablero',
+    text: 'El tablero es tu grimorio viviente. Cada trazo que hagas con una poción activa libera su energía.\n\nPodés combinar colores en un mismo hechizo para efectos más poderosos. Cuando termines de dibujar, pulsá ¡LANZAR HECHIZO!',
+    image: '',
+    video: '',
+  },
+  {
+    emoji: '⚔️',
+    title: 'El Combate',
+    text: 'El combate es por turnos. Primero atacás vos, luego el enemigo. Si tu vida llega a cero, la batalla termina.\n\nUsá el escudo 🔵 para reducir el daño, y la curación 🟢 cuando estés en peligro.',
+    image: '',
+    video: '',
+  },
+  {
+    emoji: '🏁',
+    title: '¡A combatir!',
+    text: '¡Estás listo, hechicero! El Troll Oscuro aguarda detrás de la primera puerta. Derrótalo y la Medusa caerá después.\n\n¡El año fiscal no espera!',
+    image: '',
+    video: '',
+  },
+];
+
+let introCurrentSlide = 0;
+
+function showIntro(){
+  if(localStorage.getItem('sb_intro_seen')) return;
+  introCurrentSlide = 0;
+  renderIntroSlide();
+  document.getElementById('intro-overlay').style.display = 'flex';
+}
+
+function renderIntroSlide(){
+  const slide = INTRO_SLIDES[introCurrentSlide];
+  const total = INTRO_SLIDES.length;
+
+  // Emoji / imagen / video
+  const mediaEl = document.getElementById('intro-media');
+  if(slide.video){
+    mediaEl.innerHTML = `<video src="${slide.video}" autoplay loop muted playsinline style="max-width:100%;max-height:140px;border-radius:12px;"></video>`;
+  } else if(slide.image){
+    mediaEl.innerHTML = `<img src="${slide.image}" alt="" style="max-width:100%;max-height:140px;border-radius:12px;object-fit:contain;">`;
+  } else {
+    mediaEl.innerHTML = `<div class="intro-emoji">${slide.emoji}</div>`;
+  }
+
+  document.getElementById('intro-title').textContent = slide.title;
+  document.getElementById('intro-text').innerHTML = slide.text.replace(/\n/g,'<br>');
+
+  // Dots
+  const dots = document.getElementById('intro-dots');
+  dots.innerHTML = '';
+  for(let i=0;i<total;i++){
+    const d = document.createElement('span');
+    d.className = 'intro-dot' + (i===introCurrentSlide?' active':'');
+    d.onclick = ()=>{ introCurrentSlide=i; renderIntroSlide(); };
+    dots.appendChild(d);
+  }
+
+  // Botón siguiente / finalizar
+  const btnNext = document.getElementById('intro-btn-next');
+  const btnPrev = document.getElementById('intro-btn-prev');
+  btnNext.textContent = introCurrentSlide === total-1 ? '¡Jugar! 🧙' : 'Siguiente →';
+  btnPrev.style.visibility = introCurrentSlide === 0 ? 'hidden' : 'visible';
+}
+
+function introNext(){
+  if(introCurrentSlide < INTRO_SLIDES.length - 1){
+    introCurrentSlide++;
+    renderIntroSlide();
+  } else {
+    closeIntro();
+  }
+}
+
+function introPrev(){
+  if(introCurrentSlide > 0){
+    introCurrentSlide--;
+    renderIntroSlide();
+  }
+}
+
+function closeIntro(){
+  document.getElementById('intro-overlay').style.display = 'none';
+  localStorage.setItem('sb_intro_seen','1');
+}
+
+// ===================== BATTLE TIPS =====================
+const BATTLE_TIPS = {
+  firstTurn:   { emoji:'💡', text:'Seleccioná una poción y dibujá en el tablero para lanzar un hechizo.' },
+  lowHp:       { emoji:'💚', text:'¡Tu vida está baja! Dibujá con poción verde para curarte.' },
+  noPotions:   { emoji:'🧪', text:'Te quedaste sin pociones de ese color. Farmeá más en el mapa.' },
+  shieldUp:    { emoji:'🛡️', text:'¡Escudo activo! Absorbe el daño antes que tu vida.' },
+  poisonOn:    { emoji:'☠️', text:'¡Veneno activo! El enemigo perderá vida cada turno.' },
+  enemyHeals:  { emoji:'🐍', text:'El enemigo se está regenerando. ¡Atacá fuerte!' },
+};
+
+let battleTipTimeout = null;
+let shownTips = new Set();
+
+function showBattleTip(key){
+  if(shownTips.has(key)) return; // cada tip se muestra solo una vez por batalla
+  const tip = BATTLE_TIPS[key];
+  if(!tip) return;
+  shownTips.add(key);
+
+  const box  = document.getElementById('battle-tip');
+  const icon = document.getElementById('battle-tip-icon');
+  const txt  = document.getElementById('battle-tip-text');
+  if(!box) return;
+
+  icon.textContent = tip.emoji;
+  txt.textContent  = tip.text;
+  box.classList.add('visible');
+
+  if(battleTipTimeout) clearTimeout(battleTipTimeout);
+  battleTipTimeout = setTimeout(()=>closeBattleTip(), 5000);
+}
+
+function closeBattleTip(){
+  const box = document.getElementById('battle-tip');
+  if(box) box.classList.remove('visible');
+  if(battleTipTimeout){ clearTimeout(battleTipTimeout); battleTipTimeout=null; }
+}
+
+function resetBattleTips(){
+  shownTips.clear();
+  closeBattleTip();
+}
+
 // ===================== GLOBAL INVENTORY =====================
 // Pociones persisten entre batallas y farmeo
 let INV = { red:10, blue:10, green:10 };
@@ -386,6 +533,8 @@ function goToBattle() {
   addLog('¡La batalla comienza!','system');
   gameActive=true;
   startTurnTimer();
+  resetBattleTips();
+  setTimeout(()=>showBattleTip('firstTurn'), 1500);
 }
 
 function restartGame() {
@@ -948,6 +1097,7 @@ function castSpell() {
     showFloat('🛡+'+spell.shield,'player','shield'); flash('blue');
     txt='Escudo: '+spell.shield+' absorcion!'; addLog('Escudo activado','player');
     document.getElementById('shield-indicator').style.display='block';
+    showBattleTip('shieldUp');
   } else if(spellKey==='sawblade'){
     // Quita 50% vida enemiga + regenera 20% propia
     const dmg=Math.ceil(G.enemyHp*0.50);
@@ -970,6 +1120,7 @@ function castSpell() {
     showFloat('☠️','enemy','dmg'); flash('green');
     txt='🔺 ¡Veneno! '+SPELLS.poison.poisonDmg+' daño/turno ×'+SPELLS.poison.poisonTurns;
     addLog('Veneno oscuro aplicado','player');
+    showBattleTip('poisonOn');
   }
   setResult(txt);
   document.getElementById('canvas-container').classList.add('success');
@@ -1019,6 +1170,7 @@ function doEnemyTurn(){
       G.enemyHp=Math.min(G.enemyMaxHp,G.enemyHp+h);
       healEnemy(); showFloat('+'+h,'enemy','heal');
       addLog(cfg.name+' se curó '+h,'enemy');
+      showBattleTip('enemyHeals');
     }
     updateBattleUI();
     if(checkLose()) return;
@@ -1193,6 +1345,8 @@ function updateBattleUI(){
   const spr=document.getElementById('enemy-sprite');
   if(pctHp>0.6) spr.classList.remove('damaged');
   else spr.classList.add('damaged');
+  // Tips contextuales
+  if(G.playerHp/G.playerMaxHp < 0.4) showBattleTip('lowHp');
 }
 
 function selectPotion(p){
@@ -2859,6 +3013,8 @@ loadSneakers();
 loadDefeatedBosses();
 updateMenuPreview();
 updateMenuBackground();
+// Mostrar intro tutorial la primera vez
+setTimeout(()=>showIntro(), 600);
 
 window.addEventListener('resize',()=>{
   if(gameActive) setTimeout(setupCanvas,100);
