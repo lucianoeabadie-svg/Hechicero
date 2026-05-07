@@ -812,7 +812,7 @@
 
   /* ===== BATTLE TIP ===== */
   #battle-tip {
-    position: absolute;
+    position: fixed;
     bottom: 80px; left: 50%; transform: translateX(-50%);
     background: linear-gradient(135deg, #1a0f2e, #0d0720);
     border: 1px solid #6030c0;
