@@ -301,9 +301,8 @@ const ENEMY_CONFIGS = {
     actions: [
       {type:'attack',label:'¡ATACA!',   dmg:[30,60]},
       {type:'attack',label:'¡EMBISTE!', dmg:[40,80]},
-      {type:'heal',  label:'SE CURA...', heal:[50,80]},
       {type:'attack',label:'¡GOLPE!',   dmg:[20,50]},
-      {type:'heal',  label:'¡REGENERA!',heal:[30,60]},
+      {type:'attack',label:'¡ZARPAZO!', dmg:[35,70]},
     ],
     hasMedusaGaze: false,
   },
