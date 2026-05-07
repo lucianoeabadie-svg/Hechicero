@@ -736,6 +736,106 @@
   }
 
 
+  /* ===== INTRO TUTORIAL ===== */
+  #intro-overlay {
+    position: fixed; inset: 0; z-index: 9000;
+    background: rgba(5,2,15,0.92);
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px;
+  }
+  #intro-box {
+    position: relative;
+    background: linear-gradient(160deg, #1a0f2e 0%, #0d0720 100%);
+    border: 2px solid #6030c0;
+    border-radius: 20px;
+    max-width: 380px; width: 100%;
+    padding: 28px 24px 20px;
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    box-shadow: 0 0 40px #6030c060, 0 0 80px #3010a020;
+  }
+  .intro-close-btn {
+    position: absolute; top: 10px; right: 12px;
+    background: none; border: none; color: #7060a0;
+    font-size: 18px; cursor: pointer; padding: 4px 8px;
+  }
+  .intro-close-btn:hover { color: #e8d8ff; }
+  .intro-emoji {
+    font-size: 56px; line-height: 1;
+    filter: drop-shadow(0 0 16px #a060ff80);
+  }
+  /* Espacio para imagen/video futura */
+  #intro-media { min-height: 60px; display:flex; align-items:center; justify-content:center; }
+  #intro-title {
+    font-family: 'Cinzel Decorative', serif;
+    color: #f0c040; font-size: 16px; text-align: center;
+    text-shadow: 0 0 12px #f0c04060;
+  }
+  #intro-text {
+    color: #c8b8e8; font-size: 13px; line-height: 1.65;
+    text-align: center; max-height: 160px; overflow-y: auto;
+  }
+  #intro-dots {
+    display: flex; gap: 8px; align-items: center;
+  }
+  .intro-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #3d1f6e; cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .intro-dot.active {
+    background: #a060ff; transform: scale(1.3);
+  }
+  #intro-buttons {
+    display: flex; gap: 12px; width: 100%;
+  }
+  #intro-btn-prev, #intro-btn-next {
+    flex: 1; padding: 10px 0; border-radius: 10px;
+    font-size: 14px; font-weight: bold; cursor: pointer;
+    border: none; transition: background 0.2s;
+  }
+  #intro-btn-prev {
+    background: #2a1a4a; color: #a090c0;
+  }
+  #intro-btn-prev:hover { background: #3a2a5a; }
+  #intro-btn-next {
+    background: linear-gradient(135deg, #6030c0, #9050e0);
+    color: #fff;
+    box-shadow: 0 0 14px #9050e050;
+  }
+  #intro-btn-next:hover { background: linear-gradient(135deg, #7040d0, #a060f0); }
+  #intro-btn-skip {
+    background: none; border: none; color: #5a4a7a;
+    font-size: 12px; cursor: pointer; text-decoration: underline;
+    padding: 4px;
+  }
+  #intro-btn-skip:hover { color: #9080b0; }
+
+  /* ===== BATTLE TIP ===== */
+  #battle-tip {
+    position: absolute;
+    bottom: 80px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(135deg, #1a0f2e, #0d0720);
+    border: 1px solid #6030c0;
+    border-radius: 14px;
+    padding: 10px 14px;
+    display: flex; align-items: center; gap: 8px;
+    max-width: 300px; width: 90%;
+    z-index: 500;
+    box-shadow: 0 0 20px #6030c040;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.35s ease, bottom 0.35s ease;
+  }
+  #battle-tip.visible {
+    opacity: 1; pointer-events: auto; bottom: 90px;
+  }
+  #battle-tip-icon { font-size: 22px; flex-shrink: 0; }
+  #battle-tip-text { color: #c8b8e8; font-size: 12px; line-height: 1.4; flex: 1; }
+  #battle-tip button {
+    background: none; border: none; color: #7060a0;
+    font-size: 14px; cursor: pointer; padding: 2px 4px; flex-shrink: 0;
+  }
+  #battle-tip button:hover { color: #e8d8ff; }
+
   /* ===== COINS SYSTEM ===== */
   #global-coins-bar {
     position: absolute;
