@@ -737,7 +737,7 @@
 
 
   /* ===== INTRO TUTORIAL ===== */
-  #intro-overlay {
+  #tutorial-slides {
     position: fixed; inset: 0; z-index: 9000;
     background: rgba(5,2,15,0.92);
     display: flex; align-items: center; justify-content: center;
