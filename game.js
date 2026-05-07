@@ -183,7 +183,7 @@ function resetBattleTips(){
 
 // ===================== GLOBAL INVENTORY =====================
 // Pociones persisten entre batallas y farmeo
-let INV = { red:10, blue:10, green:10 };
+let INV = { red:20, blue:10, green:10 };
 let PLAYER_HP = { hp:300, maxHp:300 };
 
 // ===================== INVENTORY & RECIPE SYSTEM =====================
